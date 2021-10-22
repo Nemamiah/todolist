@@ -47,8 +47,16 @@
     justify-content: flex-end;
 }
 
-.alignCenter{
+.flexS{
+    justify-content: flex-start;
+}
+
+.alignC{
     align-items: center;
+}
+
+.alignS{
+    align-items: flex-start;
 }
 
 .cgap10{

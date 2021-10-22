@@ -1,0 +1,1 @@
+// bouton traité validé. https://image.flaticon.com/icons/png/512/1250/1250185.png
