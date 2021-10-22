@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./color.css">
+    <title>Mytotool, la todolist par SAFRIO</title>
+  </head>
+
+  <body>
+    <header class="flex flexB alignCenter mlr2">
+      <a href="#"><img src="https://to-do-cdn.microsoft.com/static-assets/c87265a87f887380a04cf21925a56539b29364b51ae53e089c3ee2b2180148c6/icons/logo.png" alt="Logo Mytotool" title="Mytotool" class="w50p" /></a>
+      <div class="flex flexE cgap10 w70 alignCenter">
+        <div class="flex alignCenter">
+          <a href="#"><img type="button" class="wh25p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250312.png" alt="Recherche" /></a>
+
+          <input
+            class="whbtn pr35"
+            autocomplete="off"
+            placeholder="Recherche"
+            value=""
+          />
+        </div>
+
+        <nav class="">
+          <a href="#"><img type="button" class="w50p mlr1 " src="https://image.flaticon.com/icons/png/512/1250/1250151.png" alt="Ajouter une tâche" /></a>
+          <a href="#"><img type="button" class="w50p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250165.png" alt="Notifications" /></a>
+          <a href="#"><img type="button" class="w50p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250296.png" alt="Profil" /></a>
+          <a href="#"><img type="button" class="w50p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250257.png" alt="Déconnexion " /></a>
+        </nav>
+      </div>
+    </header>
+
+    <h1 class="mlr2">Bonjour Monsieur Anderson.</h1>
+
+    <main class="flex flexB mlr2">
+      <aside class="menuAside">
+        <section class="w15">
+          <div class="flex flexB alignCenter"><h2>Accès rapide</h2>
+          <input
+              class="wh25p mlr1"
+              type="image"
+              src="https://image.flaticon.com/icons/png/512/1250/1250194.png"
+              alt="Personnaliser les accès rapides"
+              value="Personnaliser"
+            /></div>
+          
+          <article class="flex flexCol">
+            <h3 class="mt0">Par date</h3>
+            <button class="ptb10 whbtn mrt10p5">Aujourd'hui</button>
+            <button class="ptb10 whbtn mrt10p5">Demain</button>
+            <button class="ptb10 whbtn mrt10p5">Cette semaine</button>
+            <button class="ptb10 whbtn mrt10p5">La semaine prochaine</button>
+            <button class="ptb10 whbtn mrt10p5">Ce mois-ci</button>
+            <button class="ptb10 whbtn mrt10p5">
+              Afficher toutes les tâches
+            </button>
+          </article>
+
+          <article class="flex flexCol">
+            <h3>Par projet</h3>
+            <button class="ptb10 whbtn mrt10p5">CESI</button>
+            <button class="ptb10 whbtn mrt10p5">Projet X</button>
+            <button class="ptb10 whbtn mrt10p5">Devapps</button>
+            <button class="ptb10 whbtn mrt10p5">Piscine 42</button>
+            <button class="ptb10 whbtn mrt10p5">
+              Afficher tous les projets
+            </button>
+          </article>
+
+          <article class="flex flexCol">
+            <h3>Par catégorie</h3>
+            <button class="ptb10 whbtn mrt10p5">Urgent</button>
+            <button class="ptb10 whbtn mrt10p5">Marketing</button>
+            <button class="ptb10 whbtn mrt10p5">Comptabilité</button>
+            <button class="ptb10 whbtn mrt10p5">Prospection</button>
+            <button class="ptb10 whbtn mrt10p5">
+              Afficher toutes les catégories
+            </button>
+          </article>
+
+          <article class="flex flexCol">
+            <h3>Ajout rapide</h3>
+            <button class="ptb10 whbtn mrt10p5">Ajouter une tâche</button>
+            <button class="ptb10 whbtn mrt10p5">Ajouter un projet</button>
+            <button class="ptb10 whbtn mrt10p5">Ajouter une catégorie</button>
+          </article>
+
+          <article>
+            <input
+              class="wh50p"
+              type="image"
+              src="https://image.flaticon.com/icons/png/512/1250/1250194.png"
+              alt="Personnaliser les accès rapides"
+              value="Personnaliser"
+            />
+          </article>
+        </section>
+      </aside>
+
+      <section class="w70">
+        <h2>Aujourd'hui</h2>
+
+        <h3>Vendredi 22 octobre 2021</h3>
+
+        <article class="flex flexCol">
+          <div class="grid gtc cgap10">
+            <p>10:15</p>
+            <p>Présentation portes ouvertes</p>
+            <p class="tac">
+              à CESI <br /><br>
+              Salle 202
+            </p>
+            <p class="grid gc2s">
+              Note :
+             
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga
+                impedit quae nobis ipsam veniam, soluta deserunt itaque beatae
+                pariatur voluptatibus distinctio reiciendis mollitia illum
+                exercitationem neque
+               
+              <br><br>
+              Projet : CESI <br><br>
+              Catégorie : Professionnel <br><br>
+            </p>
+            <div class="m1em">
+              <button class="ptb10 whbtn mw75p fright mrt10p5">
+                Supprimer
+              </button>
+              <button class="ptb10 whbtn mw75p fright mrt10p5">Fait</button>
+            </div>
+          </div>
+
+          <div class="grid gtc cgap10">
+            <p>15:00</p>
+            <p>Réserver After work</p>
+            <p class="tac">
+              à Cormountreuil <br /><br>
+              LA BOUQUINE
+            </p>
+            <p class="grid gc2s">
+              Note :
+             
+                Aucune note.
+               
+              <br /><br>
+              Projet : CESI <br /><br>
+              Catégorie : Divertissements <br /><br>
+            </p>
+
+            <div class="m1em">
+              <button class="ptb10 whbtn mw75p fright mrt10p5">
+                Supprimer
+              </button>
+              <button class="ptb10 whbtn mw75p fright mrt10p5">Fait</button>
+            </div>
+          </div>
+
+          <div class="grid gtc cgap10">
+            <p>18:15</p>
+            <p>Préparer la soirée gaming</p>
+            <p class="tac">à Neuflize CITY</p>
+            <p class="grid gc2s">
+              Note :
+             
+                Faire les courses
+               
+              <br /><br>
+              Projet : Projet X <br /><br>
+              Catégorie : Urgent <br /><br>
+            </p>
+
+            <div class="m1em">
+              <button class="ptb10 whbtn mw75p fright mrt10p5">
+                Supprimer
+              </button>
+              <button class="ptb10 whbtn mw75p fright mrt10p5">Fait</button>
+            </div>
+          </div>
+
+          <div><p>Vous n'avez pas d'autre tâche pour aujourd'hui.</p></div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
+

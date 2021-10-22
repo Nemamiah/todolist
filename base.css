@@ -1,0 +1,202 @@
+.wth{
+    border: 1px solid blue;
+    height: 200px;
+}
+
+.b{
+    border: 1px solid blue;
+}
+
+/* base */
+.tac{
+    text-align: center;
+}
+
+.m1em{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+/* flex */
+
+.flex{
+    display: flex;
+}
+
+.flexCol{
+    flex-direction: column;
+}
+
+.flexA{
+    justify-content: space-around;
+}
+
+.flexB{
+    justify-content: space-between;
+}
+
+.flexC{
+    justify-content: center;
+}
+
+.flexE{
+    justify-content: flex-end;
+}
+
+.alignCenter{
+    align-items: center;
+}
+
+.cgap10{
+    column-gap: 10px;
+}
+
+/* grid */
+
+.grid{
+    display: grid;
+}
+
+.gtc{
+    grid-template-columns: 50px repeat(auto-fit, minmax(12vw, 1fr));
+}
+
+.gc2s{
+    grid-column: 2 span;
+}
+/* margin */
+
+.mt0{
+    margin-top: 0px;
+}
+
+.mtb15{
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.mtb30{
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.mtb60{
+    margin-top:60px;
+    margin-bottom:60px;
+}
+
+.mlr1{
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.mlr2{
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.mlr15{
+    margin-left:15px;
+    margin-right:15px;
+}
+
+.mlr30{
+    margin-left:30px;
+    margin-right:30px;
+}
+
+.mlr60{
+    margin-left:60px;
+    margin-right:60px;
+}
+
+/* padding */
+
+.ptb10{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.plr15{
+    padding-left:15px;
+    padding-right:15px;
+}
+
+.plr30{
+    padding-left:30px;
+    padding-right:30px;
+}
+
+.plr60{
+    padding-left:60px;
+    padding-right:60px;
+}
+
+.pr35{
+    padding-right: 35px;
+}
+
+.mrt10p5{
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+/* Width & Height */
+.wh30p{
+    width:30px;
+    height: 30px;
+}
+
+.wh25p{
+    width:25px;
+    height: 25px;
+}
+
+.wh50p{
+    width:50px;
+    height: 50px;
+}
+
+.whbtn{
+    min-width: 30px;
+    max-width:15vw;
+    min-height: 30px;
+}
+
+.w50p{
+    width:50px;
+}
+
+.w15{
+    width:15vw;
+}
+
+.w25{
+    width: 25vw;
+}
+
+.w45{
+    width:45vw
+}
+
+.w70{
+    width: 80%;
+}
+
+.mw75p{
+    max-width: 75px;
+}
+/* Position */
+.absolute{
+    position:absolute;
+}
+
+.relative{
+    position:relative;
+}
+
+.fright{
+    float:right;
+}
