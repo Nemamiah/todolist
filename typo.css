@@ -41,3 +41,17 @@ footer{
 footer p{
     color:#dbdade
 }
+
+a {
+    text-decoration: none;
+}
+
+a p {
+    color: rgb(200 200 230);
+
+}
+
+a p:hover {
+    color: #0404AB;
+    transition: 0.2s ease;
+}

@@ -33,6 +33,21 @@
     .alignETab{
         align-items: flex-end;
     }
+
+    .sectionLog{
+        flex-direction: column;
+    
+    }
+
+    .mainLog{
+        margin-left: 20vw;
+        margin-right: 20vw;
+        padding-bottom:5vw;
+    }
+
+    .card{
+        width:40vw;
+    }
 }
 
 @media screen and (max-width:500px){
@@ -65,6 +80,15 @@
 
     .tacMob{
         text-align:left
+    }
+    .mainLog{
+        margin-left: 2vw;
+        margin-right: 2vw;
+        padding-bottom:5vw;
+    }
+
+    .card{
+        width:80vw;
     }
 
 }
