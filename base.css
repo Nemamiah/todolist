@@ -31,11 +31,11 @@
     flex-direction: column;
 }
 
-.flexA{
+.spaceA{
     justify-content: space-around;
 }
 
-.flexB{
+.spaceB{
     justify-content: space-between;
 }
 
@@ -97,6 +97,11 @@
     margin-bottom:60px;
 }
 
+.mtb1{
+    margin-top:1vw;
+    margin-right: 1vw;
+}
+
 .mlr1{
     margin-left: 1vw;
     margin-right: 1vw;
@@ -146,6 +151,10 @@
 
 .pr35{
     padding-right: 35px;
+}
+
+.pl25p{
+    padding-left:25px;
 }
 
 .mrt10p5{

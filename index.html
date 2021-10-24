@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <header class="flex flexB alignC mlr2">
+    <header class="flex spaceB alignC mlr2">
       <a href="#"><img src="https://to-do-cdn.microsoft.com/static-assets/c87265a87f887380a04cf21925a56539b29364b51ae53e089c3ee2b2180148c6/icons/logo.png" alt="Logo Mytotool" title="Mytotool" class="w50p" /></a>
       <div class="flex flexE cgap10 w70 alignC">
         <div class="flex alignC">
@@ -27,7 +27,7 @@
         </div>
 
         <nav class="">
-          <a href="#"><img type="button" class="w50p mlr1 " src="https://image.flaticon.com/icons/png/512/1250/1250151.png" alt="Ajouter une tâche" /></a>
+          <a href="#"><img type="button" class="w50p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250151.png" alt="Ajouter une tâche" /></a>
           <a href="#"><img type="button" class="w50p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250165.png" alt="Notifications" /></a>
           <a href="#"><img type="button" class="w50p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250296.png" alt="Profil" /></a>
           <a href="#"><img type="button" class="w50p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250257.png" alt="Déconnexion " /></a>
@@ -37,10 +37,10 @@
 
     <h1 class="mlr2">Bonjour Monsieur Anderson.</h1>
 
-    <main class="flex flexB mlr2">
+    <main class="flex spaceB mlr2">
       <aside class="menuAside">
-        <section class="w15">
-          <div class="flex flexB alignC"><h2>Accès rapide</h2>
+        <section class="w15 bsd">
+          <div class="flex spaceB alignC"><h2>Accès rapide</h2>
           <input
               class="wh25p mlr1"
               type="image"
@@ -92,13 +92,22 @@
         </section>
       </aside>
 
-      <section class="w70">
-        <h2>Aujourd'hui</h2>
+      <section class="w70 bsd">
+        <article class="flex spaceB alignC">
+          <div>
+            <h2 class="pl25p">Aujourd'hui</h2>
 
-        <h3>Vendredi 22 octobre 2021</h3>
+            <h3 class="pl25p">Vendredi 22 octobre 2021</h3>  
+          </div>
+          <div>
+            <a href="#"><img type="button" class="w50p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250262.png" alt="Période prédécente" title="Période précédente"></a>
+            <a href="#"><img type="button" class="w50p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250306.png" alt="Période suivante" title="Période suivante"></a>
+          </div>
+        </article>
+        
 
-        <article class="flex flexCol">
-          <div class="grid gtc cgap10">
+        <article class="flex flexCol pl25p ">
+          <div class="grid gtc cgap10 bsdB">
             <p>10:15</p>
             <p>Présentation portes ouvertes</p>
             <p class="tac">
@@ -120,13 +129,13 @@
             <div class="m1em flex flexE alignS">
                 <a href="#"><img src="https://image.flaticon.com/icons/png/512/1250/1250180.png" 
                   class="wh25p mw75p mlr1" alt="Supprimer la tâche" title="Supprimer"></a>
-                <a href="#"><img src="https://image.flaticon.com/icons/png/512/1250/1250578.png" 
+                <a href="#"><img src="https://image.flaticon.com/icons/png/512/1250/1250185.png" 
                   class="wh25p mw75p mlr1" alt="Tâche traitée" title="Traité"></a>
 
             </div>
           </div>
-
-          <div class="grid gtc cgap10">
+          
+          <div class="grid gtc cgap10 bsdB">
             <p>15:00</p>
             <p>Réserver After work</p>
             <p class="tac">
@@ -152,7 +161,7 @@
             </div>
           </div>
 
-          <div class="grid gtc cgap10">
+          <div class="grid gtc cgap10 bsdB">
             <p>18:15</p>
             <p>Préparer la soirée gaming</p>
             <p class="tac">à Neuflize CITY</p>
