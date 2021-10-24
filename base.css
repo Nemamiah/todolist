@@ -19,6 +19,10 @@
     margin-inline-end: 0px;
 }
 
+.mtPage{
+    margin-top: 100px;
+    margin-bottom:40px;
+}
 /* flex */
 
 
@@ -73,6 +77,10 @@
     grid-template-columns: 50px repeat(auto-fit, minmax(12vw, 1fr));
 }
 
+.gtc2{
+    grid-template-columns: 20vw repeat(auto-fit, minmax(12vw, 1fr));
+}
+
 .gc2s{
     grid-column: 2 span;
 }
@@ -80,6 +88,10 @@
 
 .mt0{
     margin-top: 0px;
+}
+
+.mb1{
+    margin-bottom: 1vw;
 }
 
 .mtb15{
@@ -102,6 +114,11 @@
     margin-bottom: 1vw;
 }
 
+.mtb2{
+    margin-top:2vw;
+    margin-bottom: 2vw;
+}
+
 .mlr1{
     margin-left: 1vw;
     margin-right: 1vw;
@@ -109,6 +126,14 @@
 
 .ml1{
     margin-left: 1vw;
+}
+
+.mr10p{
+    margin-right: 10px;
+}
+
+.ml0{
+    margin-left: 0;
 }
 .mlr2{
     margin-left: 2vw;
@@ -130,6 +155,12 @@
     margin-right:60px;
 }
 
+.mrt10p5{
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+
 /* padding */
 
 .ptb10{
@@ -142,9 +173,9 @@
     padding-right:15px;
 }
 
-.plr30p{
-    padding-left:30px;
-    padding-right:30px;
+.plr1{
+    padding-left:1vw;
+    padding-right:1vw;
 }
 
 .plr60{
@@ -159,11 +190,12 @@
 .pb1{
     padding-bottom: 1vw;
 }
-
-.mrt10p5{
-    margin-right: 10px;
-    margin-top: 5px;
+.pb2{
+    padding-bottom: 2vw;
 }
+
+
+
 
 /* Width & Height */
 .wh30p{
@@ -204,9 +236,6 @@
     width:45vw
 }
 
-.w70{
-    width: 80%;
-}
 
 .mw75p{
     max-width: 75px;

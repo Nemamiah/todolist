@@ -1,13 +1,31 @@
+::placeholder{
+  color: rgb(200 200 230)
+}
+
+input{
+  color: rgb(200 200 230)
+}
+
+input:focus{
+  color: #0404AB;
+
+}
+
 .neoStyle {
   border-radius: 13px;
   background: linear-gradient(45deg, #dbdade, #ffffff);
   box-shadow: 22px -22px 43px #d3d3d7, -22px 22px 43px #ffffff;
 }
 
-.bsd{
-    box-shadow: 0px 5px 5px rgb(223, 223, 252);
+.bsd {
+  box-shadow: 0px 2px 5px rgb(223, 223, 252);
 }
 
-.bsdB{
-    box-shadow: 0px 15px 10px -15px rgb(223, 223, 252); 
+.bsdB {
+  box-shadow: 0px 15px 10px -15px rgb(223, 223, 252);
 }
+
+.bsdBorder {
+  border: rgb(223 223 252) solid 0.1px;
+}
+

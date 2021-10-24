@@ -6,20 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="./base.css" />
-    <link rel="stylesheet" href="./main.css">
-    <link rel="stylesheet" href="./color.css">
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./color.css" />
+    <link rel="stylesheet" href="./typo.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <title>Mytotool, la todolist par SAFRIO</title>
   </head>
 
   <body>
-    <header class="flex spaceB alignC mlr2">
-      <a href="#"><img src="https://to-do-cdn.microsoft.com/static-assets/c87265a87f887380a04cf21925a56539b29364b51ae53e089c3ee2b2180148c6/icons/logo.png" alt="Logo Mytotool" title="Mytotool" class="w50p" /></a>
-      <div class="flex flexE cgap10 w70 alignC">
+    <header class="flex spaceB alignC mlr2 headerFixed">
+      <a href="#"
+        ><img
+          src="https://to-do-cdn.microsoft.com/static-assets/c87265a87f887380a04cf21925a56539b29364b51ae53e089c3ee2b2180148c6/icons/logo.png"
+          alt="Logo Mytotool"
+          title="Mytotool"
+          class="w50p"
+      /></a>
+      <div class="flex flexE cgap10 alignC">
         <div class="flex alignC">
-          <a href="#"><img type="button" class="wh25p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250312.png" alt="Recherche" /></a>
+          <a href="#"
+            ><img
+              type="button"
+              title="Recherche"
+              class="wh25p mlr1"
+              src="https://image.flaticon.com/icons/png/512/1250/1250312.png"
+              alt="Recherche"
+          /></a>
 
           <input
-            class="whbtn pr35"
+            class="whbtn pr35 bsd bsdBorder"
             autocomplete="off"
             placeholder="Recherche"
             value=""
@@ -27,137 +46,242 @@
         </div>
 
         <nav class="">
-          <a href="#"><img type="button" class="w50p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250151.png" alt="Ajouter une tâche" /></a>
-          <a href="#"><img type="button" class="w50p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250165.png" alt="Notifications" /></a>
-          <a href="#"><img type="button" class="w50p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250296.png" alt="Profil" /></a>
-          <a href="#"><img type="button" class="w50p mlr1" src="https://image.flaticon.com/icons/png/512/1250/1250257.png" alt="Déconnexion " /></a>
+          <a href="#"
+            ><img
+              type="button"
+              class="w50p mlr1"
+              title="Ajouter une tâche"
+              src="https://image.flaticon.com/icons/png/512/1250/1250151.png"
+              alt="Ajouter une tâche"
+          /></a>
+          <a href="#"
+            ><img
+              type="button"
+              class="w50p mlr1"
+              src="https://image.flaticon.com/icons/png/512/1250/1250165.png"
+              alt="Notifications"
+              title="Notifications"
+          /></a>
+          <a href="#"
+            ><img
+              type="button"
+              class="w50p mlr1"
+              src="https://image.flaticon.com/icons/png/512/1250/1250296.png"
+              title="Profil"
+              alt="Profil"
+          /></a>
+          <a href="#"
+            ><img
+              type="button"
+              class="w50p mlr1"
+              src="https://image.flaticon.com/icons/png/512/1250/1250257.png"
+              title="Déconnexion "
+              alt="Déconnexion "
+          /></a>
         </nav>
       </div>
     </header>
 
-    <h1 class="mlr2">Bonjour Monsieur Anderson.</h1>
+    <h1 class="tac mtPage">Bonjour Monsieur Anderson.</h1>
 
-    <main class="flex spaceB mlr2">
+    <main class="flex spaceB mlr2 grid gtc2">
       <aside class="menuAside">
-        <section class="w15 bsd plr30p pb1">
-          <div class="flex spaceB alignC"><h2>Accès rapide</h2>
-          <input
-              class="wh25p mlr1"
+        <section class="w15 bsd plr1 pb1">
+          <div class="flex spaceB alignC">
+            <h2>Accès rapide</h2>
+            <input
+              class="wh25p ml1"
               type="image"
+              title="Personnaliser les accès rapides"
               src="https://image.flaticon.com/icons/png/512/1250/1250194.png"
               alt="Personnaliser les accès rapides"
               value="Personnaliser"
-            /></div>
-          
-          <article class="flex flexCol">
-            <h3 class="mt0">Par date</h3>
-            <button class="ptb10 whbtn mrt10p5">Aujourd'hui</button>
-            <button class="ptb10 whbtn mrt10p5">Demain</button>
-            <button class="ptb10 whbtn mrt10p5">Cette semaine</button>
-            <button class="ptb10 whbtn mrt10p5">La semaine prochaine</button>
-            <button class="ptb10 whbtn mrt10p5">Ce mois-ci</button>
-            <button class="ptb10 whbtn mrt10p5">
-              Afficher toutes les tâches
-            </button>
-          </article>
+            />
+          </div>
 
-          <article class="flex flexCol">
-            <h3>Par projet</h3>
-            <button class="ptb10 whbtn mrt10p5">CESI</button>
-            <button class="ptb10 whbtn mrt10p5">Projet X</button>
-            <button class="ptb10 whbtn mrt10p5">Devapps</button>
-            <button class="ptb10 whbtn mrt10p5">Piscine 42</button>
-            <button class="ptb10 whbtn mrt10p5">
-              Afficher tous les projets
-            </button>
-          </article>
+          <fieldset class="flex bsdBorder bsd flexCol mb1 whbtn mr10p ml0">
+            <legend>Ajout rapide</legend>
+            <input
+              class="mtb1 bsd bsdBorder"
+              type="text"
+              list="addFavList"
+              placeholder="Ajouter..."
+            />
 
-          <article class="flex flexCol">
-            <h3>Par catégorie</h3>
-            <button class="ptb10 whbtn mrt10p5">Urgent</button>
-            <button class="ptb10 whbtn mrt10p5">Marketing</button>
-            <button class="ptb10 whbtn mrt10p5">Comptabilité</button>
-            <button class="ptb10 whbtn mrt10p5">Prospection</button>
-            <button class="ptb10 whbtn mrt10p5">
-              Afficher toutes les catégories
-            </button>
-          </article>
+            <datalist id="addFavList" class="">
+              <option class="" value="Ajouter une tâche">
+                Ajouter une tâche
+              </option>
+              <option class="" value="Ajouter un projet">
+                Ajouter un projet
+              </option>
+              <option class="" value="Ajouter une catégorie">
+                Ajouter une catégorie
+              </option>
+            </datalist>
+          </fieldset>
 
-          <article class="flex flexCol">
-            <h3>Ajout rapide</h3>
-            <button class="ptb10 whbtn mrt10p5">Ajouter une tâche</button>
-            <button class="ptb10 whbtn mrt10p5">Ajouter un projet</button>
-            <button class="ptb10 whbtn mrt10p5">Ajouter une catégorie</button>
-          </article>
+          <fieldset class="flex bsdBorder bsd flexCol mb1 whbtn mr10p ml0">
+            <legend class="">Afficher par date</legend>
+            <input
+              class="mtb1 bsd bsdBorder"
+              type="text"
+              list="printDate"
+              placeholder="Afficher..."
+            />
+            <input class="mtb1 bsd bsdBorder" type="date" />
+
+            <datalist id="printDate">
+              <option class="" value="Aujourd'hui">Aujourd'hui</option>
+              <option class="" value="Demain">Demain</option>
+              <option class="" value="Cette semaine">Cette semaine</option>
+              <option class="" value="La semaine prochaine">
+                La semaine prochaine
+              </option>
+              <option class="" value="Ce mois-ci">Ce mois-ci</option>
+              <option class="" value="Afficher toutes les tâches">
+                Afficher toutes les tâches
+              </option>
+            </datalist>
+          </fieldset>
+
+          <fieldset class="flex bsdBorder bsd flexCol mb1 whbtn mr10p ml0">
+            <legend>Afficher par projet</legend>
+            <input
+              type="text"
+              class="mtb1 bsd bsdBorder"
+              list="printProjet"
+              placeholder="Afficher..."
+            />
+
+            <datalist id="printProjet">
+              <option class="" value="CESI">CESI</option>
+              <option class="" value="Projet X">Projet X</option>
+              <option class="" value="Devapps">Devapps</option>
+              <option class="" value="Piscine 42">Piscine 42</option>
+              <option class="" value="Afficher tous les projets">
+                Afficher tous les projets
+              </option>
+            </datalist>
+          </fieldset>
+
+          <fieldset class="flex bsdBorder bsd flexCol mb1 whbtn mr10p ml0">
+            <legend>Afficher par catégorie</legend>
+            <input
+              type="text"
+              class="mtb1 bsd bsdBorder"
+              list="printCategorie"
+              placeholder="Afficher..."
+            />
+
+            <!-- <input type="color"> -->
+
+            <datalist id="printCategorie">
+              <option class="" value="Urgent">Urgent</option>
+              <option class="" value="Marketing">Marketing</option>
+              <option class="" value="Comptabilité">Comptabilité</option>
+              <option class="" value="Prospection">Prospection</option>
+              <option class="" value="Afficher toutes les catégories">
+                Afficher toutes les catégories
+              </option>
+            </datalist>
+          </fieldset>
         </section>
       </aside>
 
-      <section class="w70 bsd plr30p">
+      <section class="bsd plr1">
         <article class="flex spaceB alignC">
           <div>
             <h2 class="">Aujourd'hui</h2>
 
-            <h3 class="">Vendredi 22 octobre 2021</h3>  
+            <h3 class="">Vendredi 22 octobre 2021</h3>
           </div>
           <div class="flex flexE spaceB">
-            <a href="#"><img type="button" class="w50p ml1" src="https://image.flaticon.com/icons/png/512/1250/1250262.png" alt="Période prédécente" title="Période précédente"></a>
-            <a href="#"><img type="button" class="w50p ml1" src="https://image.flaticon.com/icons/png/512/1250/1250306.png" alt="Période suivante" title="Période suivante"></a>
+            <a href="#"
+              ><img
+                type="button"
+                class="w50p ml1"
+                src="https://image.flaticon.com/icons/png/512/1250/1250262.png"
+                alt="Période prédécente"
+                title="Période précédente"
+            /></a>
+            <a href="#"
+              ><img
+                type="button"
+                class="w50p ml1"
+                src="https://image.flaticon.com/icons/png/512/1250/1250306.png"
+                alt="Période suivante"
+                title="Période suivante"
+            /></a>
           </div>
         </article>
-        
 
-        <article class="flex flexCol ">
+        <article class="flex flexCol">
           <div class="grid gtc cgap10 bsdB">
             <p>10:15</p>
             <p>Présentation portes ouvertes</p>
             <p class="tac">
-              à CESI <br /><br>
+              à CESI <br /><br />
               Salle 202
             </p>
             <p class="grid gc2s">
-              Note :
-             
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga
-                impedit quae nobis ipsam veniam, soluta deserunt itaque beatae
-                pariatur voluptatibus distinctio reiciendis mollitia illum
-                exercitationem neque
-               
-              <br><br>
-              Projet : CESI <br><br>
-              Catégorie : Professionnel <br><br>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Fuga impedit quae nobis ipsam veniam, soluta deserunt itaque
+              beatae pariatur voluptatibus distinctio reiciendis mollitia illum
+              exercitationem neque
+
+              <br /><br />
+              Projet : CESI <br /><br />
+              Catégorie : Professionnel <br /><br />
             </p>
             <div class="m1em flex flexE alignS">
-                <a href="#"><img src="https://image.flaticon.com/icons/png/512/1250/1250180.png" 
-                  class="wh25p mw75p mlr1" alt="Supprimer la tâche" title="Supprimer"></a>
-                <a href="#"><img src="https://image.flaticon.com/icons/png/512/1250/1250185.png" 
-                  class="wh25p mw75p mlr1" alt="Tâche traitée" title="Traité"></a>
-
+              <a href="#"
+                ><img
+                  src="https://image.flaticon.com/icons/png/512/1250/1250180.png"
+                  class="wh25p mw75p mlr1"
+                  alt="Supprimer la tâche"
+                  title="Supprimer"
+              /></a>
+              <a href="#"
+                ><img
+                  src="https://image.flaticon.com/icons/png/512/1250/1250185.png"
+                  class="wh25p mw75p mlr1"
+                  alt="Tâche traitée"
+                  title="Traité"
+              /></a>
             </div>
           </div>
-          
+
           <div class="grid gtc cgap10 bsdB">
             <p>15:00</p>
             <p>Réserver After work</p>
             <p class="tac">
-              à Cormountreuil <br /><br>
+              à Cormountreuil <br /><br />
               LA BOUQUINE
             </p>
             <p class="grid gc2s">
-              Note :
-             
-                Aucune note.
-               
-              <br /><br>
-              Projet : CESI <br /><br>
-              Catégorie : Divertissements <br /><br>
+              Aucune note.
+
+              <br /><br />
+              Projet : CESI <br /><br />
+              Catégorie : Divertissements <br /><br />
             </p>
 
             <div class="m1em flex flexE alignS">
-                <a href="#"><img src="https://image.flaticon.com/icons/png/512/1250/1250180.png" 
-                  class="wh25p mw75p mlr1" alt="Supprimer la tâche" title="Supprimer"></a>
-                <a href="#"><img src="https://image.flaticon.com/icons/png/512/1250/1250578.png" 
-                  class="wh25p mw75p mlr1" alt="Tâche traitée" title="Traité"></a>
-
+              <a href="#"
+                ><img
+                  src="https://image.flaticon.com/icons/png/512/1250/1250180.png"
+                  class="wh25p mw75p mlr1"
+                  alt="Supprimer la tâche"
+                  title="Supprimer"
+              /></a>
+              <a href="#"
+                ><img
+                  src="https://image.flaticon.com/icons/png/512/1250/1250578.png"
+                  class="wh25p mw75p mlr1"
+                  alt="Tâche traitée"
+                  title="Traité"
+              /></a>
             </div>
           </div>
 
@@ -166,21 +290,28 @@
             <p>Préparer la soirée gaming</p>
             <p class="tac">à Neuflize CITY</p>
             <p class="grid gc2s">
-              Note :
-             
-                Faire les courses
-               
-              <br /><br>
-              Projet : Projet X <br /><br>
-              Catégorie : Urgent <br /><br>
+              Faire les courses
+
+              <br /><br />
+              Projet : Projet X <br /><br />
+              Catégorie : Urgent <br /><br />
             </p>
 
             <div class="m1em flex flexE alignS">
-                <a href="#"><img src="https://image.flaticon.com/icons/png/512/1250/1250180.png" 
-                  class="wh25p mw75p mlr1" alt="Supprimer la tâche" title="Supprimer"></a>
-                <a href="#"><img src="https://image.flaticon.com/icons/png/512/1250/1250578.png" 
-                  class="wh25p mw75p mlr1" alt="Tâche traitée" title="Traité"></a>
-
+              <a href="#"
+                ><img
+                  src="https://image.flaticon.com/icons/png/512/1250/1250180.png"
+                  class="wh25p mw75p mlr1"
+                  alt="Supprimer la tâche"
+                  title="Supprimer"
+              /></a>
+              <a href="#"
+                ><img
+                  src="https://image.flaticon.com/icons/png/512/1250/1250578.png"
+                  class="wh25p mw75p mlr1"
+                  alt="Tâche traitée"
+                  title="Traité"
+              /></a>
             </div>
           </div>
 
@@ -189,7 +320,6 @@
       </section>
     </main>
 
-    <footer> <p class="flex flexC">&copy Co-pirate Thibault BOUCHE</p></footer>
+    <footer><p class="flex flexC">&copy Co-pirate Thibault BOUCHE</p></footer>
   </body>
 </html>
-

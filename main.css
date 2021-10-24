@@ -1,0 +1,9 @@
+
+
+.headerFixed{
+    position: fixed;
+    background-color: white;
+    width: 95vw;
+    top: 0;
+    padding-top: 15px;
+}
