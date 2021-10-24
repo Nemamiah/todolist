@@ -23,7 +23,7 @@
 
 .scroller {
     width: auto;
-    height: 70vh;
+    height: 65vh;
     overflow-y: scroll;
     scrollbar-width: thin;
   }

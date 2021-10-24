@@ -1,3 +1,5 @@
+
+
 @media screen and (max-width:830px){
     aside {
         display:none;
@@ -8,11 +10,28 @@
     }
 
     .scroller{
-        width: 90vw
+        width: 80vw
     }
 
     .flexCTab{
         justify-content: center;
+    }
+
+    .plr1{
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .gc2sTab{
+        grid-column: 2 span;
+    }
+
+    .gr2sTab{
+        grid-row: 2 span;
+    }
+
+    .alignETab{
+        align-items: flex-end;
     }
 }
 
@@ -32,8 +51,20 @@
         margin-inline-end: 0px;
     }
 
-    .plr1{
-        padding-left: 5vw;
-        padding-right: 5vw;
+    .gc2sTab{
+        grid-column: 3 span;
     }
+
+    .gr2sTab{
+        grid-row: 4 span;
+    }
+
+    .flexCTab{
+        justify-content: flex-end;
+    }
+
+    .tacMob{
+        text-align:left
+    }
+
 }
