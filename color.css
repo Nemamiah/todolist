@@ -29,3 +29,6 @@ input:focus{
   border: rgb(223 223 252) solid 0.1px;
 }
 
+.bgWhite{
+  background-color: white;
+}

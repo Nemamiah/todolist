@@ -1,9 +1,30 @@
 
 
+.fixed{
+    position:fixed;
+}
+
 .headerFixed{
-    position: fixed;
-    background-color: white;
     width: 95vw;
-    top: 0;
     padding-top: 15px;
 }
+
+.top{
+    top: 0;
+}
+
+.bottom{
+    bottom: 0;
+}
+
+.tac{
+    text-align: center;
+}
+
+.scroller {
+    width: auto;
+    height: 70vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+  }
+

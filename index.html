@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <header class="flex spaceB alignC mlr2 headerFixed">
+    <header class="flex spaceB alignC mlr2 fixed headerFixed bgWhite top">
       <a href="#"
         ><img
           src="https://to-do-cdn.microsoft.com/static-assets/c87265a87f887380a04cf21925a56539b29364b51ae53e089c3ee2b2180148c6/icons/logo.png"
@@ -84,9 +84,9 @@
 
     <h1 class="tac mtPage">Bonjour Monsieur Anderson.</h1>
 
-    <main class="flex spaceB mlr2 grid gtc2">
-      <aside class="menuAside">
-        <section class="w15 bsd plr1 pb1">
+    <main class="flex spaceB mlr2 bgWhite">
+      <aside class="menuAside bsd scroller fixed">
+        <section class="w15 plr1">
           <div class="flex spaceB alignC">
             <h2>Accès rapide</h2>
             <input
@@ -189,7 +189,7 @@
         </section>
       </aside>
 
-      <section class="bsd plr1">
+      <section class="bsd plr1 ml18 fixed scroller">
         <article class="flex spaceB alignC">
           <div>
             <h2 class="">Aujourd'hui</h2>
@@ -320,6 +320,8 @@
       </section>
     </main>
 
-    <footer><p class="flex flexC">&copy Co-pirate Thibault BOUCHE</p></footer>
+    <footer class="flex flexC">
+      <p class="tac fixed bottom m0 ptb10">&copy Co-pirate Thibault BOUCHE</p>
+    </footer>
   </body>
 </html>

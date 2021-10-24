@@ -33,3 +33,11 @@ p{
 legend{
     color: #0404AB;
 }
+
+footer{
+    font-size: 12px;
+}
+
+footer p{
+    color:#dbdade
+}

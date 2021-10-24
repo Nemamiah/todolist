@@ -8,8 +8,10 @@
 }
 
 /* base */
-.tac{
-    text-align: center;
+
+
+.h75{
+    height:75vh;
 }
 
 .m1em{
@@ -86,6 +88,10 @@
 }
 /* margin */
 
+.m0{
+    margin: 0
+}
+
 .mt0{
     margin-top: 0px;
 }
@@ -126,6 +132,10 @@
 
 .ml1{
     margin-left: 1vw;
+}
+
+.ml18{
+    margin-left:18vw;
 }
 
 .mr10p{
