@@ -1,0 +1,39 @@
+@media screen and (max-width:830px){
+    aside {
+        display:none;
+    }
+
+    .mlr18{
+        margin-left: 2vw;
+    }
+
+    .scroller{
+        width: 90vw
+    }
+
+    .flexCTab{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:500px){
+    .displayTab{
+        display: none;
+    }
+
+    .alignSTab{
+        align-items: flex-start
+    }
+
+    .marginH2Tab{
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+    .plr1{
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+}
