@@ -62,10 +62,15 @@
     display: inline;
   }
 
-  .shortWayWH{
+  .shortWayWH {
     padding-top: 5px;
     width: 60px;
     height: 60px;
+  }
+
+  .mlrTab {
+    margin-left: 2vw;
+    margin-right: 2vw;
   }
 }
 

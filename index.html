@@ -31,7 +31,7 @@
           class="w50p"
       /></a>
 
-      <div class="flex flexE cgap10 alignC mlr2">
+      <div class="flex flexE cgap10 alignC mlrTab">
         <div class="flex alignC shortWay displayTab">
           <a href="#">
             <img
@@ -101,7 +101,7 @@
           <a href="#"
             ><img
               type="button"
-              class="wh50p mlr1"
+              class="wh50p"
               src="https://image.flaticon.com/icons/png/512/1250/1250257.png"
               title="Déconnexion "
               alt="Déconnexion "
@@ -129,14 +129,15 @@
 
           <fieldset class="flex bsdBorder bsd flexCol mb1 whbtn mr10p ml0">
             <legend>Ajout rapide</legend>
-            <input
+            <!-- <input
               class="mtb1 bsd bsdBorder"
               type="text"
               list="addFavList"
               placeholder="Ajouter..."
-            />
+            /> -->
 
-            <datalist id="addFavList" class="">
+            <select id="addFavList" class="mtb1 bsd bsdBorder">
+              <option class="" title="ajouter" value="Ajouter...">Ajouter...</option>
               <option class="" value="Ajouter une tâche">
                 Ajouter une tâche
               </option>
@@ -146,20 +147,19 @@
               <option class="" value="Ajouter une catégorie">
                 Ajouter une catégorie
               </option>
-            </datalist>
+            </select>
           </fieldset>
 
           <fieldset class="flex bsdBorder bsd flexCol mb1 whbtn mr10p ml0">
             <legend class="">Afficher par date</legend>
-            <input
+            <!-- <input
               class="mtb1 bsd bsdBorder"
               type="text"
               list="printDate"
               placeholder="Afficher..."
-            />
-            <input class="mtb1 bsd bsdBorder" type="date" />
+            /> -->
 
-            <datalist id="printDate">
+            <select id="printDate" class="mtb1 bsd bsdBorder">
               <option class="" value="Aujourd'hui">Aujourd'hui</option>
               <option class="" value="Demain">Demain</option>
               <option class="" value="Cette semaine">Cette semaine</option>
@@ -170,7 +170,9 @@
               <option class="" value="Afficher toutes les tâches">
                 Afficher toutes les tâches
               </option>
-            </datalist>
+            </select>
+            <input class="mtb1 bsd bsdBorder" type="date" />
+
           </fieldset>
 
           <fieldset class="flex bsdBorder bsd flexCol mb1 whbtn mr10p ml0">

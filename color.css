@@ -1,14 +1,26 @@
-::placeholder{
-  color: rgb(200 200 230)
+
+
+::placeholder {
+  color: rgb(200 200 230);
+}
+/* ::selection {
+  color: #0404ab;
+} */
+
+select:focus{
+  color: #0404ab;
 }
 
-input{
-  color: rgb(200 200 230)
+select{
+  color: rgb(200 200 230);
 }
 
-input:focus{
-  color: #0404AB;
+input {
+  color: rgb(200 200 230);
+}
 
+input:focus {
+  color: #0404ab;
 }
 
 .neoStyle {
@@ -29,6 +41,6 @@ input:focus{
   border: rgb(223 223 252) solid 0.1px;
 }
 
-.bgWhite{
+.bgWhite {
   background-color: white;
 }
