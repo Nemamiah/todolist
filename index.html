@@ -23,7 +23,7 @@
 
   <body>
     <header class="flex spaceB alignC mlr2 fixed headerFixed bgWhite top">
-      <a href="#"
+      <a href="#" onclick="reloadAccueil()"
         ><img
           src="https://to-do-cdn.microsoft.com/static-assets/c87265a87f887380a04cf21925a56539b29364b51ae53e089c3ee2b2180148c6/icons/logo.png"
           alt="Logo Mytotool"
@@ -45,11 +45,11 @@
         </div>
 
         <div class="flex alignC searchTab displayTab">
-          <a href="#"
+          <a href="#" onclick="searchBar()"
             ><img
               type="button"
               title="Recherche"
-              class="wh50p mlr1 "
+              class="wh50p mlr1"
               src="https://image.flaticon.com/icons/png/512/1250/1250312.png"
               alt="Recherche"
           /></a>
@@ -74,7 +74,7 @@
         </nav>
 
         <nav class="displayTab">
-          <a href="#"
+          <a href="#" onclick="addTask()"
             ><img
               type="button"
               class="wh50p mlr1"
@@ -82,7 +82,7 @@
               src="https://image.flaticon.com/icons/png/512/1250/1250151.png"
               alt="Ajouter une tâche"
           /></a>
-          <a href="#"
+          <a href="#" onclick="openNotif()"
             ><img
               type="button"
               class="wh50p mlr1"
@@ -90,7 +90,7 @@
               alt="Notifications"
               title="Notifications"
           /></a>
-          <a href="#"
+          <a href="#" onclick="openProfil()"
             ><img
               type="button"
               class="wh50p mlr1"
@@ -98,7 +98,7 @@
               title="Profil"
               alt="Profil"
           /></a>
-          <a href="#"
+          <a href="#" onclick="deconnect()"
             ><img
               type="button"
               class="wh50p"
@@ -119,6 +119,7 @@
             <h2>Accès rapide</h2>
             <input
               class="wh25p ml1"
+              onclick="shortWay()"
               type="image"
               title="Personnaliser les accès rapides"
               src="https://image.flaticon.com/icons/png/512/1250/1250194.png"
@@ -137,7 +138,9 @@
             /> -->
 
             <select id="addFavList" class="mtb1 bsd bsdBorder">
-              <option class="" title="ajouter" value="Ajouter...">Ajouter...</option>
+              <option class="" title="ajouter" value="Ajouter...">
+                Ajouter...
+              </option>
               <option class="" value="Ajouter une tâche">
                 Ajouter une tâche
               </option>
@@ -172,7 +175,6 @@
               </option>
             </select>
             <input class="mtb1 bsd bsdBorder" type="date" />
-
           </fieldset>
 
           <fieldset class="flex bsdBorder bsd flexCol mb1 whbtn mr10p ml0">
@@ -231,6 +233,7 @@
               ><img
                 type="button"
                 class="wh50p ml1"
+                onclick="leftButton()"
                 src="https://image.flaticon.com/icons/png/512/1250/1250262.png"
                 alt="Période prédécente"
                 title="Période précédente"
@@ -239,6 +242,7 @@
               ><img
                 type="button"
                 class="wh50p ml1"
+                onclick="rightButton()"
                 src="https://image.flaticon.com/icons/png/512/1250/1250306.png"
                 alt="Période suivante"
                 title="Période suivante"
@@ -268,6 +272,7 @@
                   class="wh25p mw75p mlr1"
                   alt="Supprimer la tâche"
                   title="Supprimer"
+                  onclick="deleteTask()"
               /></a>
               <a href="#"
                 ><img
@@ -275,6 +280,7 @@
                   class="wh25p mw75p mlr1"
                   alt="Tâche traitée"
                   title="Traité"
+                  onclick="doneTask()"
               /></a>
             </div>
           </div>
@@ -301,6 +307,7 @@
                   class="wh25p mw75p mlr1"
                   alt="Supprimer la tâche"
                   title="Supprimer"
+                  onclick="deleteTask()"
               /></a>
               <a href="#"
                 ><img
@@ -308,6 +315,7 @@
                   class="wh25p mw75p mlr1"
                   alt="Tâche traitée"
                   title="Traité"
+                  onclick="doneTask()"
               /></a>
             </div>
           </div>
@@ -331,6 +339,7 @@
                   class="wh25p mw75p mlr1"
                   alt="Supprimer la tâche"
                   title="Supprimer"
+                  onclick="deleteTask()"
               /></a>
               <a href="#"
                 ><img
@@ -338,6 +347,7 @@
                   class="wh25p mw75p mlr1"
                   alt="Tâche traitée"
                   title="Traité"
+                  onclick="doneTask()"
               /></a>
             </div>
           </div>
@@ -348,9 +358,9 @@
         </article>
       </section>
     </main>
-
     <!-- <footer class="flex flexC">
       <p class="tac fixed bottom m0 ptb10"> Co-pirate Thibault BOUCHE <sup>&copy</sup></p>
     </footer> -->
+    <script src="./main.js"></script>
   </body>
 </html>

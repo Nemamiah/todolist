@@ -11,6 +11,8 @@ select:focus{
   color: #0404ab;
 }
 
+
+
 select{
   color: rgb(200 200 230);
 }
@@ -18,6 +20,8 @@ select{
 input {
   color: rgb(200 200 230);
 }
+
+
 
 input:focus {
   color: #0404ab;
