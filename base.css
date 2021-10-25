@@ -1,3 +1,5 @@
+/* pour tests */
+
 .wth{
     border: 1px solid blue;
     height: 200px;
@@ -25,6 +27,7 @@
     margin-top: 100px;
     margin-bottom:40px;
 }
+
 /* flex */
 
 
@@ -133,6 +136,8 @@
 .ml1{
     margin-left: 1vw;
 }
+
+
 
 .mlr18{
     margin-left:18vw;
@@ -254,16 +259,4 @@
 
 .mw75p{
     max-width: 75px;
-}
-/* Position */
-.absolute{
-    position:absolute;
-}
-
-.relative{
-    position:relative;
-}
-
-.fright{
-    float:right;
 }

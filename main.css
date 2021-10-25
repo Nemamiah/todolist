@@ -1,7 +1,24 @@
 
 
+/* Position */
+.absolute{
+    position:absolute;
+}
+
+.relative{
+    position:relative;
+}
+
+.fright{
+    float:right;
+}
+
 .fixed{
     position:fixed;
+}
+
+.static{
+    position:static;
 }
 
 .headerFixed{

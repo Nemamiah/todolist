@@ -1,4 +1,19 @@
+/* Burger */
 
+.shortWay{
+    display: none;
+}
+
+.navMob{
+    display: none;
+}
+
+.searchText{
+    display: none;
+}
+
+
+/* TAB */
 
 @media screen and (max-width:830px){
     aside {
@@ -45,8 +60,13 @@
         padding-bottom:5vw;
     }
 
+    .shortWay{
+        display: inline
+    }
 
 }
+
+/* MOB */
 
 @media screen and (max-width:500px){
     .displayTab{
@@ -85,6 +105,8 @@
         padding-bottom:5vw;
     }
 
-
+    .navMob{
+        display: block
+    }
 
 }

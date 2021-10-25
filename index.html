@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="./main.css" />
     <link rel="stylesheet" href="./color.css" />
     <link rel="stylesheet" href="./typo.css" />
-    <link rel="stylesheet" href="./query.css">
+    <link rel="stylesheet" href="./query.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Mytotool : Votre todolist par SAFRIO</title>
   </head>
@@ -27,30 +30,54 @@
           title="Mytotool"
           class="w50p"
       /></a>
-      <div class="flex flexE cgap10 alignC displayTab">
-        <div class="flex alignC">
+
+      <div class="flex flexE cgap10 alignC mlr2">
+        <div class="flex alignC shortWay displayTab">
+          <a href="#">
+            <img
+              type="button"
+              class="wh50p"
+              src="https://cdn-icons-png.flaticon.com/512/1336/1336833.png"
+              title="Accès rapides"
+              alt="Accès rapides"
+            />
+          </a>
+        </div>
+
+        <div class="flex alignC searchTab displayTab">
           <a href="#"
             ><img
               type="button"
               title="Recherche"
-              class="wh25p mlr1"
+              class="wh50p mlr1 "
               src="https://image.flaticon.com/icons/png/512/1250/1250312.png"
               alt="Recherche"
           /></a>
-
           <input
-            class="whbtn pr35 bsd bsdBorder"
+            class="whbtn pr35 bsd bsdBorder searchText"
             autocomplete="off"
             placeholder="Recherche"
             value=""
           />
         </div>
 
-        <nav class="">
+        <nav class="navMob mlr2">
+          <a href="#">
+            <img
+              src="https://image.flaticon.com/icons/png/512/1250/1250272.png"
+              alt="Menu Mobile"
+              class="wh50p mlr1"
+              title="Menu"
+              type="image"
+            />
+          </a>
+        </nav>
+
+        <nav class="displayTab">
           <a href="#"
             ><img
               type="button"
-              class="w50p mlr1"
+              class="wh50p mlr1"
               title="Ajouter une tâche"
               src="https://image.flaticon.com/icons/png/512/1250/1250151.png"
               alt="Ajouter une tâche"
@@ -58,7 +85,7 @@
           <a href="#"
             ><img
               type="button"
-              class="w50p mlr1"
+              class="wh50p mlr1"
               src="https://image.flaticon.com/icons/png/512/1250/1250165.png"
               alt="Notifications"
               title="Notifications"
@@ -66,7 +93,7 @@
           <a href="#"
             ><img
               type="button"
-              class="w50p mlr1"
+              class="wh50p mlr1"
               src="https://image.flaticon.com/icons/png/512/1250/1250296.png"
               title="Profil"
               alt="Profil"
@@ -74,7 +101,7 @@
           <a href="#"
             ><img
               type="button"
-              class="w50p mlr1"
+              class="wh50p mlr1"
               src="https://image.flaticon.com/icons/png/512/1250/1250257.png"
               title="Déconnexion "
               alt="Déconnexion "
@@ -88,7 +115,7 @@
     <main class="flex spaceB mlr2 flexCTab">
       <aside class="menuAside bsd scroller fixed">
         <section class="w15 plr1">
-          <div class="flex spaceB alignC">
+          <div class="flex spaceB alignC static">
             <h2>Accès rapide</h2>
             <input
               class="wh25p ml1"
@@ -201,7 +228,7 @@
             <a href="#"
               ><img
                 type="button"
-                class="w50p ml1"
+                class="wh50p ml1"
                 src="https://image.flaticon.com/icons/png/512/1250/1250262.png"
                 alt="Période prédécente"
                 title="Période précédente"
@@ -209,7 +236,7 @@
             <a href="#"
               ><img
                 type="button"
-                class="w50p ml1"
+                class="wh50p ml1"
                 src="https://image.flaticon.com/icons/png/512/1250/1250306.png"
                 alt="Période suivante"
                 title="Période suivante"
@@ -221,18 +248,15 @@
           <div class="grid gtc cgap10 bsdB">
             <p class="gr2sTab">10:15</p>
             <p class="gc2sTab">Présentation portes ouvertes</p>
-            <p class="tac tacMob gc2sTab">
-              à CESI <br /><br />
-              Salle 202
-            </p>
+            <p class="tac tacMob gc2sTab">à CESI <br /></p>
             <p class="grid gc2s">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Fuga impedit quae nobis ipsam veniam, soluta deserunt itaque
-              beatae pariatur voluptatibus distinctio reiciendis mollitia illum
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga
+              impedit quae nobis ipsam veniam, soluta deserunt itaque beatae
+              pariatur voluptatibus distinctio reiciendis mollitia illum
               exercitationem neque
 
               <br /><br />
-              Projet : CESI <br /><br />
+              Projet : CESI <br />
               Catégorie : Professionnel <br /><br />
             </p>
             <div class="m1em flex flexE alignS gc2sTab flexCTab">
@@ -257,14 +281,14 @@
             <p class="gr2sTab">15:00</p>
             <p class="gc2sTab">Réserver After work</p>
             <p class="tac tacMob gc2sTab">
-              à Cormountreuil <br /><br />
+              à Cormountreuil <br />
               LA BOUQUINE
             </p>
             <p class="grid gc2s">
               Aucune note.
 
               <br /><br />
-              Projet : CESI <br /><br />
+              Projet : CESI <br />
               Catégorie : Divertissements <br /><br />
             </p>
 
@@ -294,7 +318,7 @@
               Faire les courses
 
               <br /><br />
-              Projet : Projet X <br /><br />
+              Projet : Projet X <br />
               Catégorie : Urgent <br /><br />
             </p>
 
@@ -316,7 +340,9 @@
             </div>
           </div>
 
-          <div><p>Vous n'avez pas d'autre tâche pour aujourd'hui.</p></div>
+          <div>
+            <p class="tac">Vous n'avez pas d'autre tâche pour aujourd'hui.</p>
+          </div>
         </article>
       </section>
     </main>
