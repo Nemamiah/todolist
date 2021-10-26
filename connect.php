@@ -94,9 +94,9 @@
         <h2>S'inscrire/Se connecter</h2>
             <p class="fontSize16p m0 tac">C'est le même endroit.</p>
           
-          <!-- <form class="flex flexCol" 
+          <form class="flex flexCol" 
           action="./users.php" 
-          method="post"> -->
+          method="post">
             
             <span class="" id="messageName"></span> 
             <input
@@ -120,7 +120,7 @@
               placeholder="E-mail"
               title="Votre adresse e-mail"
               />
-              
+
             <input
               class="mtb1"
               id="password"
