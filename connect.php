@@ -162,7 +162,7 @@
           >Se connecter par e-mail
           </button>
           <!-- <a href=""><p class="tac">Mot de passe oublié ?</p></a> -->
-          <button title="Se connecter avec FaceBook" class="social-signin facebook ptb10 plr15 mtb1">
+          <button title="Se connecter avec Facebook" class="social-signin facebook ptb10 plr15 mtb1">
             Log in with FaceBook
           </button>
           <button title="Se connecter avec Twitter" class="social-signin twitter ptb10 plr15 mtb1">
