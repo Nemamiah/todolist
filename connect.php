@@ -36,7 +36,7 @@
             ><img
               type="button"
               title="Recherche"
-              class="wh25p mlr1 "
+              class="wh25p mlr1"
               src="https://image.flaticon.com/icons/png/512/1250/1250312.png"
               alt="Recherche"
           /></a>
@@ -44,7 +44,6 @@
           <input
             class="whbtn pr35 bsd bsdBorder"
             type="text"
-            
             autocomplete="off"
             placeholder="Recherche"
             value=""
@@ -92,59 +91,91 @@
     <main class="bsd scrollerLog flex mlr2 flexCol spaceA flexC alignC mainLog">
       <section class="flex alignC sectionLog">
         <article class="w270 mtb2 mlr2 flex flexCol spaceA flexC">
-          <h2>Se connecter</h2>
+          <h2>S'inscrire</h2>
+          <form class="flex flexCol" action="./users.php" method="post">
+            
+            <span class="" id="messageName"></span> 
+            <input
+              class="mtb1"
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Nom"
+              value=""
+              onblur="emptyName()"
+              title="Votre nom de famille"
+            />
 
-          <input
-            class="plr15 prb10 mtb1"
-            type="text"
-            name="username"
-            placeholder="Username"
-          />
-          <input
-            class="plr15 prb10 mtb1"
-            type="text"
-            name="email"
-            placeholder="E-mail"
-          />
-          <input
-            class="plr15 prb10 mtb1"
-            type="password"
-            name="password"
-            placeholder="Password"
-          />
-          <input
-            class="plr15 prb10 mtb1"
-            type="password"
-            name="password2"
-            placeholder="Retype password"
-          />
+            <span class="" id="messageMail"></span> 
+            <input 
+              class="mtb1" 
+              id="mail"
+              onblur="emptyMail()"
+              type="email" 
+              name="email" 
+              placeholder="E-mail"
+              title="Votre adresse e-mail"
+              />
+            <input
+              class="mtb1"
+              id="password"
+              type="password"
+              name="password"
+              value=""
+              placeholder="Mot de passe"
+              onblur="validatePassword()"
+              title="Choisissez un mot de passe"
+            />
 
-          <input
-            class="plr15 ptb10 mtb2"
-            type="submit"
-            name="signup_submit"
-            value="Sign me up"
-          />
+            <span class="" id="messagePwd2"></span> 
+            <input
+              class="mtb1"
+              id="password2"
+              onblur="samePassword()"
+              type="password"
+              name="password2"
+              placeholder="Mot de passe"
+              title="Confirmez votre mot de passe"
+            />
+
+            <span class="" id="messagePwd"></span> 
+
+
+            <input
+              class="ptb10 mtb2"
+              type="submit"
+              name="signUpSubmit"
+              value="S'inscrire"
+              title="S'inscrire"
+            />
+          </form>
         </article>
 
         <article class="or mtb2 flex flexCol spaceA alignC flexC mlr2">
           OR
         </article>
 
-        <article class=" w270 mtb2 mlr2 flex flexCol spaceA flexC">
-          <button class="social-signin facebook ptb10 plr15 mtb1">
-            Log in with facebook
+        <article class="w270 mtb2 mlr2 flex flexCol spaceA flexC">
+          <button
+            class="btnClassic ptb10 plr15 mtb1"
+            title="Se connecter par e-mail"
+          >Se connecter par e-mail
           </button>
-          <button class="social-signin twitter ptb10 plr15 mtb1">
+          <!-- <a href=""><p class="tac">Mot de passe oublié ?</p></a> -->
+          <button title="Se connecter avec FaceBook" class="social-signin facebook ptb10 plr15 mtb1">
+            Log in with FaceBook
+          </button>
+          <button title="Se connecter avec Twitter" class="social-signin twitter ptb10 plr15 mtb1">
             Log in with Twitter
           </button>
-          <button class="social-signin google ptb10 plr15 mtb1">
-            Log in with Google+
+          <button title="Se connecter avec Google" class="social-signin google ptb10 plr15 mtb1">
+            Log in with Google
           </button>
-          <a href=""><p>Mot de passe oublié ?</p></a>
         </article>
       </section>
     </main>
     <script src="./main.js"></script>
+    <script src="./connect.js"></script>
+
   </body>
 </html>

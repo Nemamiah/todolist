@@ -2,27 +2,7 @@
     font-family: 'Nunito', sans-serif;;
 }
 
-h1{
-    color: #01015D;
-}
-
-h2{
-    color: #01015D;
-}
-
-h3{
-    color: #01015D;
-}
-
-h4{
-    color: #01015D;
-}
-
-h5{
-    color: #01015D;
-}
-
-h6{
+h1, h2, h3, h4, h5, h6{
     color: #01015D;
 }
 

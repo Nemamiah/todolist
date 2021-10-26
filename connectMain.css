@@ -14,7 +14,7 @@
 
 
 input[type="text"],
-input[type="password"] {
+input[type="password"], input[type="email"] {
   display: block;
   box-sizing: border-box;
   margin-bottom: 20px;
@@ -27,7 +27,7 @@ input[type="password"] {
 }
 
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus, input[type="email"]:focus {
   border-bottom: 2px solid #0404ab;
   color: #0404ab;
   transition: 0.2s ease;
