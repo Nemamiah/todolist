@@ -48,3 +48,12 @@ input:focus {
 .bgWhite {
   background-color: white;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+#testCalendar:after{
+  content:'📅';
+} 
