@@ -12,5 +12,5 @@
     // echo "Confirmation du mot de passe : ";
     // echo $_POST["password2"];
     header("Location:./index.html")
-
+    // Penser à mettre un retour à la page de connexion si l'utilisateur n'est pas inscrit
 ?>

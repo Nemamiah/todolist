@@ -19,7 +19,7 @@ function samePassword(){
     let userPassword2 = document.getElementById("password2").value; 
 
     if(userPassword != userPassword2){
-        messagePass = '<em style="font-size:12px;color:red">Il semblerait que les mots de passe ne correspondent pas. Merci de bien vouloir vérifier les champs de mot de passe.</em>'
+        messagePass = '<em style="font-size:12px;color:red">Il semblerait que les mots de passe ne correspondent pas. Merci de bien vouloir vérifier votre saisie.</em>'
     
         document.getElementById("messagePwd2").innerHTML = messagePass; 
     } else {
@@ -51,5 +51,25 @@ function emptyMail(){
     }else {
         messageMail = ""
         document.getElementById("messageMail").innerHTML = messageMail; 
+    }
+}
+
+var displayName = document.getElementById("name").style.display;
+var displayPassword = document.getElementById("password2").style.display;
+
+displayName = 'none';
+displayPassword = 'none';
+
+
+function verifUser(){
+    let messageMail ;
+    let userMail = document.getElementById("mail").value;
+    let userMailDb = "test";
+    
+
+    if(userMail != userMailDb){
+        displayName = 'block';
+        displayPassword = 'block';
+    
     }
 }

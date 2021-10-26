@@ -25,7 +25,7 @@
     <header class="flex spaceB alignC mlr2 fixed headerFixed bgWhite top">
       <a href="#"
         ><img
-          src="https://to-do-cdn.microsoft.com/static-assets/c87265a87f887380a04cf21925a56539b29364b51ae53e089c3ee2b2180148c6/icons/logo.png"
+          src="https://www.clipartmax.com/png/full/106-1064080_blue-check-mark-symbol.png"
           alt="Logo Mytotool"
           title="Mytotool"
           class="w50p"
@@ -91,8 +91,12 @@
     <main class="bsd scrollerLog flex mlr2 flexCol spaceA flexC alignC mainLog">
       <section class="flex alignC sectionLog">
         <article class="w270 mtb2 mlr2 flex flexCol spaceA flexC">
-          <h2>S'inscrire</h2>
-          <form class="flex flexCol" action="./users.php" method="post">
+        <h2>S'inscrire/Se connecter</h2>
+            <p class="fontSize16p m0 tac">C'est le même endroit.</p>
+          
+          <!-- <form class="flex flexCol" 
+          action="./users.php" 
+          method="post"> -->
             
             <span class="" id="messageName"></span> 
             <input
@@ -116,6 +120,7 @@
               placeholder="E-mail"
               title="Votre adresse e-mail"
               />
+              
             <input
               class="mtb1"
               id="password"
@@ -144,9 +149,10 @@
             <input
               class="ptb10 mtb2"
               type="submit"
+              onclick="verifUser()"
               name="signUpSubmit"
-              value="S'inscrire"
-              title="S'inscrire"
+              value="S'inscrire/Se connecter"
+              title="S'inscrire/Se connecter"
             />
           </form>
         </article>
@@ -163,7 +169,7 @@
           </button>
           <!-- <a href=""><p class="tac">Mot de passe oublié ?</p></a> -->
           <button title="Se connecter avec Facebook" class="social-signin facebook ptb10 plr15 mtb1">
-            Log in with FaceBook
+            Log in with Facebook
           </button>
           <button title="Se connecter avec Twitter" class="social-signin twitter ptb10 plr15 mtb1">
             Log in with Twitter

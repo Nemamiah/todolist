@@ -264,3 +264,40 @@
 .mw75p{
     max-width: 75px;
 }
+/* Position */
+.absolute{
+    position:absolute;
+}
+
+.relative{
+    position:relative;
+}
+
+.dnone{
+    display:none;
+}
+
+.fright{
+    float:right;
+}
+
+.fixed{
+    position:fixed;
+}
+
+.static{
+    position:static;
+}
+
+.top{
+    top: 0;
+}
+
+.bottom{
+    bottom: 0;
+}
+
+.tac{
+    text-align: center;
+}
+
