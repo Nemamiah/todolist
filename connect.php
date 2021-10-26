@@ -104,7 +104,7 @@
               value=""
               onblur="emptyName()"
               title="Votre nom de famille"
-            />
+            /> 
 
             <span class="" id="messageMail"></span> 
             <input 
