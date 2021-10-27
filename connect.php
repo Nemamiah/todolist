@@ -95,12 +95,12 @@
             <p class="fontSize16p m0 tac" id="messageRegisterOff">(C'est le même endroit.)</p>
             
             <p class="m0 tac" id="messageRegisterOn">Enchanté,
-              <br> pour pouvoir sauvegarder votre To do list, vous pouvez vous enregistrer en complétant les champs qui viennent d'apparaître.</p> 
+              <br>N'hésitez pas à créer un compte.</p> 
 
-          <form class="flex flexCol" action="./users.php"
-          method="post">
-          <!--   -->
-
+          <form class="flex flexCol" 
+          method="post"
+          >
+          <!-- action="./users.php"  --> 
             
             <span class="" id="messageName"></span> 
             <input
@@ -153,11 +153,13 @@
             <input
               class="ptb10 mtb2"
               type="submit"
-              onclick="verifUser(e)"
               name="signUpSubmit"
               value="S'inscrire/Se connecter"
+              id="signupSubmit"
               title="S'inscrire/Se connecter"
             />
+          <a href=""><p class="tac m0">Mot de passe oublié ?</p></a>
+
           </form>
         </article>
 
@@ -166,20 +168,22 @@
         </article>
 
         <article class="w270 mtb2 mlr2 flex flexCol spaceA flexC">
-          <button
-            class="btnClassic ptb10 plr15 mtb1"
-            title="Se connecter par e-mail"
-          >Se connecter par e-mail
-          </button>
-          <!-- <a href=""><p class="tac">Mot de passe oublié ?</p></a> -->
-          <button title="Se connecter avec Facebook" class="social-signin facebook ptb10 plr15 mtb1">
+          
+          <button title="Se connecter avec Facebook" class="whiteColor hoverBtn facebook ptb10 plr15 mtb1">
             Log in with Facebook
           </button>
-          <button title="Se connecter avec Twitter" class="social-signin twitter ptb10 plr15 mtb1">
+          <button title="Se connecter avec Twitter" class="whiteColor hoverBtn twitter ptb10 plr15 mtb1">
             Log in with Twitter
           </button>
-          <button title="Se connecter avec Google" class="social-signin google ptb10 plr15 mtb1">
+          <button title="Se connecter avec Google" class="whiteColor hoverBtn google ptb10 plr15 mtb1">
             Log in with Google
+          </button>
+          <button
+            class="hoverBtn ptb10 plr15 mtb1 btnClassic "
+            type="button"
+            title="Accéder au site sans s'inscrire"
+            onclick="self.location.href='./index.html'" 
+          >Essayez sans vous inscrire
           </button>
         </article>
       </section>

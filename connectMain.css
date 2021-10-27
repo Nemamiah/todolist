@@ -37,7 +37,7 @@ input[type="submit"] {
   background: #0404ab;
   border-radius: 2px;
   color: #fff;
-  font-weight: 500;
+  font-weight: 800;
   text-transform: uppercase;
   transition: 0.1s ease;
   cursor: pointer;
@@ -49,6 +49,7 @@ input[type="submit"]:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   transition: 0.1s ease;
 }
+
 
 input[type="submit"]:active {
   opacity: 1;
@@ -67,35 +68,34 @@ input[type="submit"]:active {
   text-align: center;
 }
 
-button.social-signin {
+.hoverBtn {
   border: none;
   border-radius: 2px;
-  color: #fff;
-  font-weight: 500;
+  font-weight: 700;
   transition: 0.2s ease;
   cursor: pointer;
 }
 
-button.social-signin:hover,
-button.social-signin:focus {
+.hoverBtn:hover,
+.hoverBtn:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 
   transition: 0.2s ease;
 }
 
-button.social-signin:active {
+.hoverBtn:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   transition: 0.2s ease;
 }
 
-button.social-signin.facebook {
+.hoverBtn.facebook {
   background: #32508e;
 }
 
-button.social-signin.twitter {
+.hoverBtn.twitter {
   background: #55acee;
 }
 
-button.social-signin.google {
+.hoverBtn.google {
   background: #dd4b39;
 }

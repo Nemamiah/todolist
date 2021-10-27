@@ -9,7 +9,9 @@ select:focus{
   color: #0404ab;
 }
 
-
+.whiteColor{
+  color:white
+}
 
 select{
   color: rgb(200 200 230);

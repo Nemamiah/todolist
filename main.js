@@ -1,4 +1,4 @@
-console.log("Hello");
+console.log("HelloMain");
 
 function searchBar(){
     console.log("searchbar ok")
@@ -44,9 +44,4 @@ function doneTask(){
     console.log("doneTask ok");
 }
 
-var fieldFav = document.getElementById("addFavList");
-fieldFav.addEventListener("click", ()=>{
-    if (fieldFav){
-    fieldFav.style.color = "#0404ab";
-    }
-});
+
