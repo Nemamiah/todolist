@@ -23,7 +23,7 @@
   </head>
   <body>
     <header class="flex spaceB alignC mlr2 fixed headerFixed bgWhite top">
-      <a href="#"
+      <a href="./connect.php"
         ><img
           src="https://www.clipartmax.com/png/full/106-1064080_blue-check-mark-symbol.png"
           alt="Logo Mytotool"
@@ -91,12 +91,16 @@
     <main class="bsd scrollerLog flex mlr2 flexCol spaceA flexC alignC mainLog">
       <section class="flex alignC sectionLog">
         <article class="w270 mtb2 mlr2 flex flexCol spaceA flexC">
-        <h2>S'inscrire/Se connecter</h2>
-            <p class="fontSize16p m0 tac">C'est le même endroit.</p>
-          
-          <form class="flex flexCol" 
-          action="./users.php" 
+        <h2 class="tac">S'inscrire/Se connecter</h2>
+            <p class="fontSize16p m0 tac" id="messageRegisterOff">(C'est le même endroit.)</p>
+            
+            <p class="m0 tac" id="messageRegisterOn">Enchanté,
+              <br> pour pouvoir sauvegarder votre To do list, vous pouvez vous enregistrer en complétant les champs qui viennent d'apparaître.</p> 
+
+          <form class="flex flexCol" action="./users.php"
           method="post">
+          <!--   -->
+
             
             <span class="" id="messageName"></span> 
             <input
@@ -107,7 +111,7 @@
               placeholder="Nom"
               value=""
               onblur="emptyName()"
-              title="Votre nom de famille"
+              title="Saisissez votre nom de famille"
             /> 
 
             <span class="" id="messageMail"></span> 
@@ -118,7 +122,7 @@
               type="email" 
               name="email" 
               placeholder="E-mail"
-              title="Votre adresse e-mail"
+              title="Saisissez votre adresse e-mail"
               />
 
             <input
@@ -149,7 +153,7 @@
             <input
               class="ptb10 mtb2"
               type="submit"
-              onclick="verifUser()"
+              onclick="verifUser(e)"
               name="signUpSubmit"
               value="S'inscrire/Se connecter"
               title="S'inscrire/Se connecter"

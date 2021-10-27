@@ -54,22 +54,33 @@ function emptyMail(){
     }
 }
 
-var displayName = document.getElementById("name").style.display;
-var displayPassword = document.getElementById("password2").style.display;
+var displayName = document.getElementById("name");
+var displayPassword = document.getElementById("password2");
+var displayRegisterOn = document.getElementById("messageRegisterOn");
+var displayRegisterOff = document.getElementById("messageRegisterOff");
 
-displayName = 'none';
-displayPassword = 'none';
+
+displayName.style.display = 'none';
+displayPassword.style.display = 'none';
+displayRegisterOn.style.display = 'none';
+
 
 
 function verifUser(){
-    let messageMail ;
+    // e.preventDefault();
     let userMail = document.getElementById("mail").value;
-    let userMailDb = "test";
-    
+    let userMailDb = "test@mail.fr";
+
 
     if(userMail != userMailDb){
-        displayName = 'block';
-        displayPassword = 'block';
-    
+        displayName.style.display = 'block';
+        displayPassword.style.display = 'block';
+        displayRegisterOn.style.display = 'block';
+        displayRegisterOff.style.display = 'none';
+    } else {
+        document.location.href="./index.html"
     }
 }
+
+
+
