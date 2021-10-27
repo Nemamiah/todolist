@@ -75,18 +75,18 @@ function emptyMail() {
 
 
 
-//DEBUT BOUTON SE CONNECTER
+//DEBUT BOUTON SE CONNECTER - lier à la db_ - vérif db_user en php 
 
 document.getElementById("signupSubmit").addEventListener("click", function (e) {
   e.preventDefault();
   let userMail = document.getElementById("mail").value;
-  let userMailDb = "test@mail.fr";
+  let db_userMail = "test@mail.fr";
 
-  if (userMail != userMailDb) {
-    displayName.style.display = "none";
-    displayPassword.style.display = "none";
-    displayRegisterOn.style.display = "none";
-    displayRegisterOff.style.display = "block";
+  if (userMail != db_userMail) {
+    displayName.style.display = "block";
+    displayPassword.style.display = "block";
+    displayRegisterOn.style.display = "block";
+    displayRegisterOff.style.display = "none";
   } else {
     document.location.href = "./index.html";
   }
