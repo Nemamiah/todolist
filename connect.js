@@ -1,3 +1,15 @@
+var displayName = document.getElementById("name");
+var displayPassword = document.getElementById("password2");
+var displayRegisterOn = document.getElementById("messageRegisterOn");
+var displayRegisterOff = document.getElementById("messageRegisterOff");
+
+var fieldName = document.getElementById("name");
+fieldName.addEventListener("click", ()=>{
+    if (fieldName){
+    fieldName.style.color = "#0404ab";
+    }
+});
+
 function validatePassword() {
   let message;
   let userPassword = document.getElementById("password").value;
@@ -61,14 +73,9 @@ function emptyMail() {
   }
 }
 
-var displayName = document.getElementById("name");
-var displayPassword = document.getElementById("password2");
-var displayRegisterOn = document.getElementById("messageRegisterOn");
-var displayRegisterOff = document.getElementById("messageRegisterOff");
 
-displayName.style.display = "none";
-displayPassword.style.display = "none";
-displayRegisterOn.style.display = "none";
+
+//DEBUT BOUTON SE CONNECTER
 
 document.getElementById("signupSubmit").addEventListener("click", function (e) {
   e.preventDefault();
@@ -76,11 +83,13 @@ document.getElementById("signupSubmit").addEventListener("click", function (e) {
   let userMailDb = "test@mail.fr";
 
   if (userMail != userMailDb) {
-    displayName.style.display = "block";
-    displayPassword.style.display = "block";
-    displayRegisterOn.style.display = "block";
-    displayRegisterOff.style.display = "none";
+    displayName.style.display = "none";
+    displayPassword.style.display = "none";
+    displayRegisterOn.style.display = "none";
+    displayRegisterOff.style.display = "block";
   } else {
     document.location.href = "./index.html";
   }
 });
+
+//FIN BOUTON SE CONNECTER

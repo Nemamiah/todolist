@@ -94,17 +94,17 @@
         <h2 class="tac">S'inscrire/Se connecter</h2>
             <p class="fontSize16p m0 tac" id="messageRegisterOff">(C'est le même endroit.)</p>
             
-            <p class="m0 tac" id="messageRegisterOn">Enchanté,
-              <br>N'hésitez pas à créer un compte.</p> 
+            <p class="m0 tac dnone" id="messageRegisterOn">Enchanté,
+              <br>N'hésitez pas à créer un compte pour sauvegarder vos tâches.</p> 
 
-          <form class="flex flexCol" 
+          <form class="flex flexCol" action="./users.php"
           method="post"
           >
           <!-- action="./users.php"  --> 
             
             <span class="" id="messageName"></span> 
             <input
-              class="mtb1"
+              class="mtb1 dnone"
               id="name"
               type="text"
               name="name"
@@ -138,7 +138,7 @@
 
             <span class="" id="messagePwd2"></span> 
             <input
-              class="mtb1"
+              class="mtb1 dnone"
               id="password2"
               onblur="samePassword()"
               type="password"
@@ -183,7 +183,7 @@
             type="button"
             title="Accéder au site sans s'inscrire"
             onclick="self.location.href='./index.html'" 
-          >Essayez sans vous inscrire
+          >Accéder à Mytotool sans s'inscrire.
           </button>
         </article>
       </section>

@@ -18,7 +18,7 @@ select{
 }
 
 input {
-  color: rgb(200 200 230);
+  color: #0404ab;
 }
 
 .btnClassic {
@@ -29,10 +29,6 @@ input {
   border-radius: 2px;
   transition: 0.2s ease;
   cursor: pointer;
-}
-
-input:focus {
-  color: #0404ab;
 }
 
 .neoStyle {
