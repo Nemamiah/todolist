@@ -5,7 +5,6 @@
 }
 
 .scroller {
-    width: auto;
     height: 70vh;
     overflow-y: scroll;
     scrollbar-width: thin;

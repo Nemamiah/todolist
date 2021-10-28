@@ -1,3 +1,15 @@
+<?php
+
+    require_once("./configConnect.php");
+
+    $sql = "SELECT * FROM 'users'";
+    $query = $db->prepare($sql);
+    $query->execute();
+
+    $contacts = $query->fetchAll();
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -108,12 +120,22 @@
               id="name"
               type="text"
               name="name"
-              placeholder="Nom"
+              placeholder="Nom (exemple : ANDERSON)"
               value=""
               onblur="emptyName()"
               title="Saisissez votre nom de famille"
+            />
+            <span class="" id="messagePseudo"></span> 
+            <input
+              class="mtb1 dnone"
+              id="pseudo"
+              type="text"
+              name="pseudo"
+              placeholder="Pseudo (exemple : Agent SMITH)"
+              value=""
+              onblur="emptyPseudo()"
+              title="Saisissez votre pseudo"
             /> 
-
             <span class="" id="messageMail"></span> 
             <input 
               class="mtb1" 

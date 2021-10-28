@@ -1,4 +1,5 @@
 var displayName = document.getElementById("name");
+var displayPseudo = document.getElementById("pseudo");
 var displayPassword = document.getElementById("password2");
 var displayRegisterOn = document.getElementById("messageRegisterOn");
 var displayRegisterOff = document.getElementById("messageRegisterOff");
@@ -7,6 +8,13 @@ var fieldName = document.getElementById("name");
 fieldName.addEventListener("click", ()=>{
     if (fieldName){
     fieldName.style.color = "#0404ab";
+    }
+});
+
+var fieldPseudo = document.getElementById("pseudo");
+fieldPseudo.addEventListener("click", ()=>{
+    if (fieldPseudo){
+    fieldPseudo.style.color = "#0404ab";
     }
 });
 
@@ -59,6 +67,20 @@ function emptyName() {
   }
 }
 
+function emptyPseudo() {
+    let messagePseudo;
+    let userPseudo = document.getElementById("pseudo").value;
+  
+    if (userPseudo == "") {
+      messagePseudo =
+        "<em style='font-size:12px;color:red'>Veuillez saisir votre pseudo.</em>";
+      document.getElementById("messagePseudo").innerHTML = messagePseudo;
+    } else {
+      messagePseudo = "";
+      document.getElementById("messagePseudo").innerHTML = messagePseudo;
+    }
+  }
+
 function emptyMail() {
   let messageMail;
   let userMail = document.getElementById("mail").value;
@@ -84,6 +106,7 @@ document.getElementById("signupSubmit").addEventListener("click", function (e) {
 
   if (userMail != db_userMail) {
     displayName.style.display = "block";
+    displayPseudo.style.display = "block";
     displayPassword.style.display = "block";
     displayRegisterOn.style.display = "block";
     displayRegisterOff.style.display = "none";
