@@ -12,15 +12,26 @@ try {
 }
 
 
-$sql = "INSERT INTO `users` (`id`, `name`, ``nickname`, `mail`, `password`) VALUES (?, ?, ?, ?, ?)";
+
+$sql = "INSERT INTO users (id, name, nickname, mail, password) VALUES (?, ?, ?, ?, ?)";
 $query = $db->prepare($sql);
-$query->bindValue(1, "jgvjhgvhgvhgvj", PDO::PARAM_STR);
-$query->bindValue(2, $_POST["name"], PDO::PARAM_STR);
-$query->bindValue(3, $_POST["nickname"], PDO::PARAM_STR);
-$query->bindValue(4, $_POST["mail"], PDO::PARAM_STR);
-$query->bindValue(4, $_POST["password"], PDO::PARAM_STR);
+
+$userID = (uniqid() . $_POST["email"] . $_POST["name"] . $_POST["nickname"]);
+
+$query->bindValue(1, md5(htmlspecialchars($userID)));
+$query->bindValue(2, $_POST["name"]);
+$query->bindValue(3, $_POST["nickname"]);
+$query->bindValue(4, $_POST["email"]);
+$query->bindValue(5, $_POST["password"]);
+
+var_dump($query);
+var_dump($_POST);
+
+
 if ($query->execute()) {
-    "ok";
+    echo("ok");
+}else{
+    echo "nop";
 }
 
 // $sql = "UPDATE `users` SET `name` = ? WHERE `users`.`id` = 1;"

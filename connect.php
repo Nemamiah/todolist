@@ -6,7 +6,7 @@
     $query = $db->prepare($sql);
     $query->execute();
 
-    $contacts = $query->fetchAll();
+    $users = $query->fetchAll();
 
 ?>
 
@@ -81,7 +81,7 @@
               placeholder="Pseudo"
               required
               value=""
-              onblur="emptyPseudo()"
+              onblur="emptyNickname()"
               title="Saisissez votre pseudo"
             /> 
             <span class="" id="messageMail"></span> 
@@ -128,19 +128,19 @@
               class="ptb10 mtb2"
               type="submit"
               name="login"
-              value="S'inscrire"
+              value="S'inscrire/Se connecter"
               id="login"
-              title="S'inscrire"
+              title="S'inscrire/Se connecter"
             />
 
             <input
               class="ptb10 mtb2 dnone"
               type="submit"
-              name="signup"
               value="S'inscrire"
               id="signup"
               title="S'inscrire"
             />
+
           <a href=""><p class="tac m0">Mot de passe oublié ?</p></a>
 
           </form>
