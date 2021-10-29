@@ -5,8 +5,21 @@
 }
 
 .scroller {
-    height: 70vh;
+    /* height: auto; */
     overflow-y: scroll;
     scrollbar-width: thin;
   }
 
+/* base */
+
+.m1em{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.mtPage{
+    margin-top: 100px;
+    margin-bottom:40px;
+}

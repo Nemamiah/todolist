@@ -14,21 +14,39 @@
 
 /* TAB */
 
-@media screen and (max-width: 830px) {
-  aside {
+@media screen and (max-width: 1070px) {
+  aside .flex{
     display: none;
+  }
+
+  .gtr{
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .gc2{
+    grid-column: 1;
+  }
+
+
+  .gc2s{
+    grid-column: 2 / span 5;
+  
+  }
+  
+  .gtc2{
+    grid-template-columns: 1fr;
   }
 
   .mlr18 {
     margin-left: 2vw;
   }
 
-  .scroller {
-    width: 80vw;
+  .gr{
+    grid-row: 2;
   }
 
-  .flexCTab {
-    justify-content: center;
+  .flexETab {
+    justify-content: end;
   }
 
   .plr1 {
@@ -76,7 +94,7 @@
 
 /* MOB */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 520px) {
   .displayTab {
     display: none;
   }
@@ -91,13 +109,26 @@
     margin-inline-start: 0px;
     margin-inline-end: 0px;
   }
-
+  .gc2s{
+    grid-column: 2 / span 4;
+  
+  }
+/* 
   .gc2sTab {
     grid-column: 3 span;
   }
 
   .gr2sTab {
     grid-row: 4 span;
+  } */
+
+  .gr{
+    grid-row: 3;
+  }
+
+  .gcr2{
+    grid-column : 2 / span 4;
+    grid-row: 2;
   }
 
   .flexCTab {
@@ -117,3 +148,4 @@
     display: block;
   }
 }
+

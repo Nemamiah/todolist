@@ -1,28 +1,40 @@
 var displayName = document.getElementById("name");
-var displayPseudo = document.getElementById("pseudo");
+var displayNickname = document.getElementById("nickname");
 var displayPassword = document.getElementById("password2");
 var displayRegisterOn = document.getElementById("messageRegisterOn");
 var displayRegisterOff = document.getElementById("messageRegisterOff");
+var displayLogin = document.getElementById("login");
+var displaySignup = document.getElementById("signup");
+var displayHSignup = document.getElementById("hSignup");
+var displayHLogin = document.getElementById("hLogin");
+var displaySeparator = document.getElementById("separator");
 
 var fieldName = document.getElementById("name");
-fieldName.addEventListener("click", ()=>{
-    if (fieldName){
+fieldName.addEventListener("click", () => {
+  if (fieldName) {
     fieldName.style.color = "#0404ab";
-    }
+  }
 });
 
-var fieldPseudo = document.getElementById("pseudo");
-fieldPseudo.addEventListener("click", ()=>{
-    if (fieldPseudo){
-    fieldPseudo.style.color = "#0404ab";
-    }
+var fieldNickname = document.getElementById("nickname");
+fieldNickname.addEventListener("click", () => {
+  if (fieldNickname) {
+    fieldNickname.style.color = "#0404ab";
+  }
 });
 
 function validatePassword() {
   let message;
+  let messagePassword;
   let userPassword = document.getElementById("password").value;
 
-  if (
+  if (userPassword == "") {
+    messagePassword =
+      "<em style='font-size:12px;color:red'>Veuillez saisir votre mot de passe.</em>";
+    document.getElementById("messagePassword").innerHTML = messagePassword;
+    message =
+    "<em style='font-size:12px;color:red'>Attention : Votre mot de passe devrait contenir des majuscules, des minuscules, des chiffres et des caractères spéciaux en un minimum de 12 caractères.</em>";
+  } else if (
     userPassword.match(/[0-9]/g) &&
     userPassword.match(/[A-Z]/g) &&
     userPassword.match(/[a-z]/g) &&
@@ -67,51 +79,79 @@ function emptyName() {
   }
 }
 
-function emptyPseudo() {
-    let messagePseudo;
-    let userPseudo = document.getElementById("pseudo").value;
-  
-    if (userPseudo == "") {
-      messagePseudo =
-        "<em style='font-size:12px;color:red'>Veuillez saisir votre pseudo.</em>";
-      document.getElementById("messagePseudo").innerHTML = messagePseudo;
-    } else {
-      messagePseudo = "";
-      document.getElementById("messagePseudo").innerHTML = messagePseudo;
-    }
+function emptyNickname() {
+  let messageNickname;
+  let userNickname = document.getElementById("nickname").value;
+
+  if (userNickname == "") {
+    messageNickname =
+      "<em style='font-size:12px;color:red'>Veuillez saisir votre pseudo.</em>";
+    document.getElementById("messageNickname").innerHTML = messageNickname;
+  } else {
+    messageNickname = "";
+    document.getElementById("messageNickname").innerHTML = messageNickname;
   }
+}
 
 function emptyMail() {
   let messageMail;
+  let messageBonjour;
   let userMail = document.getElementById("mail").value;
+  let db_userMail = "test@mail.fr";
+  let db_userNickname = "M. Anderson";
 
   if (userMail == "") {
     messageMail =
       "<em style='font-size:12px;color:red'>Veuillez saisir votre adresse e-mail.</em>";
     document.getElementById("messageMail").innerHTML = messageMail;
+    displayHSignup.style.display = "none";
+    displayLogin.value = "S'inscrire";
+    displaySeparator.style.display = "none";
+  } else if (userMail == db_userMail) {
+    messageMail = "";
+    document.getElementById("messageMail").innerHTML = messageMail;
+
+    messageBonjour =
+      "<h2 class='fontSize16p'>Heureux de vous revoir,<br>" +
+      db_userNickname +
+      "</h2>";
+    document.getElementById("messageBonjour").innerHTML = messageBonjour;
+
+    displayHSignup.style.display = "block";
+    displayHLogin.style.display = "none";
+    displaySeparator.style.display = "none";
+    displayLogin.value = "Se connecter";
   } else {
     messageMail = "";
     document.getElementById("messageMail").innerHTML = messageMail;
+
+    messageBonjour = "<h2 class='fontSize16p'>Pas encore inscrit ?</h2>";
+    document.getElementById("messageBonjour").innerHTML = messageBonjour;
+
+    displayHSignup.style.display = "none";
+    displaySeparator.style.display = "none";
+    displayHLogin.style.display = "block";
+    displayLogin.value = "S'inscrire";
   }
 }
 
+//DEBUT BOUTON SE CONNECTER - lier à la db_ - vérif db_user en php
 
-
-//DEBUT BOUTON SE CONNECTER - lier à la db_ - vérif db_user en php 
-
-document.getElementById("signupSubmit").addEventListener("click", function (e) {
+document.getElementById("login").addEventListener("click", function (e) {
   e.preventDefault();
   let userMail = document.getElementById("mail").value;
   let db_userMail = "test@mail.fr";
 
   if (userMail != db_userMail) {
     displayName.style.display = "block";
-    displayPseudo.style.display = "block";
+    displayNickname.style.display = "block";
     displayPassword.style.display = "block";
     displayRegisterOn.style.display = "block";
     displayRegisterOff.style.display = "none";
+    displayLogin.style.display = "none";
+    displaySignup.style.display = "block";
   } else {
-    document.location.href = "./index.html";
+    document.location.href = "./users.php";
   }
 });
 

@@ -1,12 +1,13 @@
 <?php
 
-    require_once("./configConnect.php");
+    require_once("./users.php");
 
     $sql = "SELECT * FROM 'users'";
     $query = $db->prepare($sql);
     $query->execute();
 
     $contacts = $query->fetchAll();
+
 ?>
 
 
@@ -34,76 +35,22 @@
     <title>Mytotool : Bienvenue sur Mytotool, la todolist par SAFRIO</title>
   </head>
   <body>
-    <header class="flex spaceB alignC mlr2 fixed headerFixed bgWhite top">
+    <header class="flex spaceB alignC mlr2 fixed headerFixed bgWhite top left">
       <a href="./connect.php"
         ><img
           src="https://www.clipartmax.com/png/full/106-1064080_blue-check-mark-symbol.png"
           alt="Logo Mytotool"
           title="Mytotool"
-          class="w50p"
+          class="w50p ml2"
       /></a>
-      <div class="flex flexE cgap10 alignC displayTab">
-        <div class="flex alignC">
-          <a href="#"
-            ><img
-              type="button"
-              title="Recherche"
-              class="wh25p mlr1"
-              src="https://image.flaticon.com/icons/png/512/1250/1250312.png"
-              alt="Recherche"
-          /></a>
 
-          <input
-            class="whbtn pr35 bsd bsdBorder"
-            type="text"
-            autocomplete="off"
-            placeholder="Recherche"
-            value=""
-          />
-        </div>
-
-        <nav class="">
-          <a href="#"
-            ><img
-              type="button"
-              class="w50p mlr1"
-              title="Ajouter une tâche"
-              src="https://image.flaticon.com/icons/png/512/1250/1250151.png"
-              alt="Ajouter une tâche"
-          /></a>
-          <a href="#"
-            ><img
-              type="button"
-              class="w50p mlr1"
-              src="https://image.flaticon.com/icons/png/512/1250/1250165.png"
-              alt="Notifications"
-              title="Notifications"
-          /></a>
-          <a href="#"
-            ><img
-              type="button"
-              class="w50p mlr1"
-              src="https://image.flaticon.com/icons/png/512/1250/1250296.png"
-              title="Profil"
-              alt="Profil"
-          /></a>
-          <a href="#"
-            ><img
-              type="button"
-              class="w50p mlr1"
-              src="https://image.flaticon.com/icons/png/512/1250/1250257.png"
-              title="Déconnexion "
-              alt="Déconnexion "
-          /></a>
-        </nav>
-      </div>
     </header>
-    <h1 class="tac mtPage">Bienvenue sur Mytotool.</h1>
+    <h1 class="tac mtPage">Bienvenue sur Mytotool.<span class="" id="messageBonjour"></span></h1>
 
     <main class="bsd scrollerLog flex mlr2 flexCol spaceA flexC alignC mainLog">
       <section class="flex alignC sectionLog">
         <article class="w270 mtb2 mlr2 flex flexCol spaceA flexC">
-        <h2 class="tac">S'inscrire/Se connecter</h2>
+        <h2 class="tac"><span id="hLogin">S'inscrire</span><span id="separator">/</span><span id="hSignup">Se connecter</span></h2>
             <p class="fontSize16p m0 tac" id="messageRegisterOff">(C'est le même endroit.)</p>
             
             <p class="m0 tac dnone" id="messageRegisterOn">Enchanté,
@@ -112,7 +59,6 @@
           <form class="flex flexCol" action="./users.php"
           method="post"
           >
-          <!-- action="./users.php"  --> 
             
             <span class="" id="messageName"></span> 
             <input
@@ -120,18 +66,20 @@
               id="name"
               type="text"
               name="name"
-              placeholder="Nom (exemple : ANDERSON)"
+              placeholder="Nom"
+              required
               value=""
               onblur="emptyName()"
               title="Saisissez votre nom de famille"
             />
-            <span class="" id="messagePseudo"></span> 
+            <span class="" id="messageNickname"></span> 
             <input
               class="mtb1 dnone"
-              id="pseudo"
+              id="nickname"
               type="text"
-              name="pseudo"
-              placeholder="Pseudo (exemple : Agent SMITH)"
+              name="nickname"
+              placeholder="Pseudo"
+              required
               value=""
               onblur="emptyPseudo()"
               title="Saisissez votre pseudo"
@@ -141,17 +89,20 @@
               class="mtb1" 
               id="mail"
               onblur="emptyMail()"
+              required 
               type="email" 
               name="email" 
               placeholder="E-mail"
               title="Saisissez votre adresse e-mail"
               />
 
+            <span class="" id="messagePassword"></span> 
             <input
               class="mtb1"
               id="password"
               type="password"
               name="password"
+              required 
               value=""
               placeholder="Mot de passe"
               onblur="validatePassword()"
@@ -163,6 +114,7 @@
               class="mtb1 dnone"
               id="password2"
               onblur="samePassword()"
+              required
               type="password"
               name="password2"
               placeholder="Mot de passe"
@@ -175,10 +127,19 @@
             <input
               class="ptb10 mtb2"
               type="submit"
-              name="signUpSubmit"
-              value="S'inscrire/Se connecter"
-              id="signupSubmit"
-              title="S'inscrire/Se connecter"
+              name="login"
+              value="S'inscrire"
+              id="login"
+              title="S'inscrire"
+            />
+
+            <input
+              class="ptb10 mtb2 dnone"
+              type="submit"
+              name="signup"
+              value="S'inscrire"
+              id="signup"
+              title="S'inscrire"
             />
           <a href=""><p class="tac m0">Mot de passe oublié ?</p></a>
 
@@ -210,6 +171,9 @@
         </article>
       </section>
     </main>
+    <footer class="flex flexC">
+      <p class="tac bottom m0 ptb10">Développé par Thibault BOUCHE<sup>&copy</sup><br> <em>Tous droits réservés</em></p>
+    </footer>
     <script src="./main.js"></script>
     <script src="./connect.js"></script>
 

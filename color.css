@@ -21,6 +21,10 @@ input {
   color: #0404ab;
 }
 
+input:focus {
+  color: #0404ab;
+}
+
 .btnClassic {
   color: #01015D;
   background-color:rgb(223, 223, 252);
@@ -58,6 +62,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-appearance: none;
 }
 
-/* #testCalendar:after{
+/* #calendar:after{
   content: url('https://cdn-icons-png.flaticon.com/512/5885/5885054.png width="25" height="25"');
 }  */
+
+#calendar{
+  color:rgb(200 200 230);
+}

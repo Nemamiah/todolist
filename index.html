@@ -21,14 +21,14 @@
     <title>Mytotool : Votre todolist par SAFRIO</title>
   </head>
 
-  <body>
-    <header class="flex spaceB alignC mlr2 fixed headerFixed bgWhite top">
+  <body class="">
+    <header class="flex spaceB alignC mlr2 fixed headerFixed bgWhite top left">
       <a href="#" onclick="reloadAccueil()"
         ><img
           src="https://www.clipartmax.com/png/full/106-1064080_blue-check-mark-symbol.png"
           alt="Logo Mytotool"
           title="Mytotool"
-          class="w50p"
+          class="w50p ml2"
       /></a>
 
       <div class="flex flexE cgap10 alignC mlrTab">
@@ -62,11 +62,11 @@
         </div>
 
         <nav class="navMob mlr2">
-          <a href="#">
+          <a class="flex" href="./connect.php">
             <img
               src="https://image.flaticon.com/icons/png/512/1250/1250272.png"
               alt="Menu Mobile"
-              class="wh50p mlr1"
+              class="wh50p mlr1 p10p"
               title="Menu"
               type="image"
             />
@@ -110,10 +110,10 @@
       </div>
     </header>
 
-    <h1 class="tac mtPage">Bonjour Monsieur Anderson.</h1>
+    <h1 class="tac mlr2 mtPage">Bonjour Monsieur Anderson.</h1>
 
-    <main class="flex spaceB mlr2 flexCTab">
-      <aside class="menuAside bsd scroller fixed">
+    <main class="mlr2 grid gtc2">
+      <aside class="menuAside bsd flex flexC ">
         <section class="w15 plr1">
           <div class="flex spaceB alignC static">
             <h2>Accès rapide</h2>
@@ -175,7 +175,7 @@
               </option>
             </select>
             
-              <input id="testCalendar" class="mtb1 bsd bsdBorder" type="date" />
+              <input id="calendar" class="mtb1 bsd bsdBorder" type="date" />
             
           </fieldset>
 
@@ -223,8 +223,8 @@
         </section>
       </aside>
 
-      <section class="bsd plr1 mlr18 fixed scroller w75">
-        <article class="flex spaceB alignC alignSTab">
+      <section class="bsd gc2 plr1 mlr1 scroller w75">
+        <article class="flex spaceB alignC alignSTab gtr">
           <div>
             <h2 class="">Aujourd'hui</h2>
 
@@ -254,10 +254,10 @@
 
         <article class="flex flexCol">
           <div class="grid gtc cgap10 bsdB">
-            <p class="gr2sTab">10:15</p>
+            <p class="">10:15</p>
             <p class="gc2sTab">Présentation portes ouvertes</p>
-            <p class="tac tacMob gc2sTab">à CESI <br /></p>
-            <p class="grid gc2s">
+            <p class="tac tacMob gc2sTab gcr2">à CESI <br /></p>
+            <p class="gc2s gr">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga
               impedit quae nobis ipsam veniam, soluta deserunt itaque beatae
               pariatur voluptatibus distinctio reiciendis mollitia
@@ -266,7 +266,7 @@
               Projet : CESI <br />
               Catégorie : Professionnel <br /><br />
             </p>
-            <div class="m1em flex flexE alignS gc2sTab flexCTab">
+            <div class="m1em flex flexE alignS gc2sTab flexETab">
               <a href="#"
                 ><img
                   src="https://image.flaticon.com/icons/png/512/1250/1250180.png"
@@ -287,13 +287,13 @@
           </div>
 
           <div class="grid gtc cgap10 bsdB">
-            <p class="gr2sTab">15:00</p>
+            <p class="">15:00</p>
             <p class="gc2sTab">Réserver After work</p>
-            <p class="tac tacMob gc2sTab">
+            <p class="tac tacMob gc2sTab gcr2">
               à Cormountreuil <br />
               LA BOUQUINE
             </p>
-            <p class="grid gc2s">
+            <p class="gc2s gr">
               Aucune note.
 
               <br /><br />
@@ -301,7 +301,7 @@
               Catégorie : Divertissements <br /><br />
             </p>
 
-            <div class="m1em flex flexE alignS gc2sTab flexCTab">
+            <div class="m1em flex flexE alignS gc2sTab flexETab">
               <a href="#"
                 ><img
                   src="https://image.flaticon.com/icons/png/512/1250/1250180.png"
@@ -322,10 +322,10 @@
           </div>
 
           <div class="grid gtc cgap10 bsdB">
-            <p class="gr2sTab">18:15</p>
+            <p class="">18:15</p>
             <p class="gc2sTab">Préparer la soirée gaming</p>
-            <p class="tac tacMob gc2sTab">à Neuflize CITY</p>
-            <p class="grid gc2s">
+            <p class="tac tacMob gc2sTab gcr2">à Neuflize CITY</p>
+            <p class="gc2s gr">
               Faire les courses
 
               <br /><br />
@@ -333,7 +333,7 @@
               Catégorie : Urgent <br /><br />
             </p>
 
-            <div class="m1em flex flexE alignS gc2sTab flexCTab">
+            <div class="m1em flex flexE alignS gc2sTab flexETab">
               <a href="#"
                 ><img
                   src="https://image.flaticon.com/icons/png/512/1250/1250180.png"
@@ -359,9 +359,9 @@
         </article>
       </section>
     </main>
-    <!-- <footer class="flex flexC">
-      <p class="tac fixed bottom m0 ptb10"> Co-pirate Thibault BOUCHE <sup>&copy</sup></p>
-    </footer> -->
+    <footer class="flex flexC">
+      <p class="tac bottom m0 ptb10">Développé par Thibault BOUCHE<sup>&copy</sup><br> <em>Tous droits réservés</em></p>
+    </footer>
     <script src="./main.js"></script>
     <script src="./home.js"></script>
 
