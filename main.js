@@ -18,6 +18,7 @@ function openProfil(){
 
 function deconnect(){
     console.log("deconnect ok");
+    document.location.href = "./connect.php";
 }
 
 function shortWay(){
