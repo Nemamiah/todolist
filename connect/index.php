@@ -1,13 +1,14 @@
 <?php
 
-    require_once("./users.php");
+    // require_once("../users.php");
 
-    $sql = "SELECT * FROM 'users'";
-    $query = $db->prepare($sql);
-    $query->execute();
+    // $sql = "SELECT * FROM 'users'";
+    // $query = $db->prepare($sql);
+    // $query->execute();
 
-    $users = $query->fetchAll();
+    // $db_users = $query->fetchAll();
 
+    
 ?>
 
 
@@ -18,12 +19,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./base.css" />
-    <link rel="stylesheet" href="./main.css" />
-    <link rel="stylesheet" href="./color.css" />
-    <link rel="stylesheet" href="./typo.css" />
-    <link rel="stylesheet" href="./query.css" />
-    <link rel="stylesheet" href="./connectMain.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/color.css" />
+    <link rel="stylesheet" href="../css/typo.css" />
+    <link rel="stylesheet" href="../css/query.css" />
+    <link rel="stylesheet" href="../connect/connectMain.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,8 +36,8 @@
     <title>Mytotool : Bienvenue sur Mytotool, la todolist par SAFRIO</title>
   </head>
   <body>
-    <header class="flex spaceB alignC mlr2 fixed headerFixed bgWhite top left">
-      <a href="./connect.php"
+    <header class="flex spaceB alignC mlr2 fixed headerFixed bgWhite top left dnone">
+      <a href="../connect/index.php"
         ><img
           src="https://www.clipartmax.com/png/full/106-1064080_blue-check-mark-symbol.png"
           alt="Logo Mytotool"
@@ -50,7 +51,7 @@
     <main class="bsd scrollerLog flex mlr2 flexCol spaceA flexC alignC mainLog">
       <section class="flex alignC sectionLog">
         <article class="w270 mtb2 mlr2 flex flexCol spaceA flexC">
-        <h2 class="tac"><span id="hLogin">S'inscrire</span><span id="separator">/</span><span id="hSignup">Se connecter</span></h2>
+        <h2 class="tac"><span id="hLogin">S'inscrire</span><span id="separator">/</span><span id="hSignin">Se connecter</span></h2>
             <p class="fontSize16p m0 tac" id="messageRegisterOff">(C'est le même endroit.)</p>
             
             <p class="m0 tac dnone" id="messageRegisterOn">Enchanté,
@@ -67,7 +68,6 @@
               type="text"
               name="name"
               placeholder="Nom"
-              required
               value=""
               onblur="emptyName()"
               title="Saisissez votre nom de famille"
@@ -79,7 +79,6 @@
               type="text"
               name="nickname"
               placeholder="Pseudo"
-              required
               value=""
               onblur="emptyNickname()"
               title="Saisissez votre pseudo"
@@ -89,7 +88,7 @@
               class="mtb1" 
               id="mail"
               onblur="emptyMail()"
-              required 
+              autofocus="true" 
               type="email" 
               name="email" 
               placeholder="E-mail"
@@ -101,8 +100,7 @@
               class="mtb1"
               id="password"
               type="password"
-              name="password"
-              required 
+              name="password" 
               value=""
               placeholder="Mot de passe"
               onblur="validatePassword()"
@@ -114,7 +112,6 @@
               class="mtb1 dnone"
               id="password2"
               onblur="samePassword()"
-              required
               type="password"
               name="password2"
               placeholder="Mot de passe"
@@ -124,6 +121,7 @@
             <span class="" id="messagePwd"></span> 
 
 
+            <!-- onclick="self.location.href='../users.php?mail=test@mail.fr'"  -->
             <input
               class="ptb10 mtb2"
               type="submit"
@@ -137,7 +135,7 @@
               class="ptb10 mtb2 dnone"
               type="submit"
               value="S'inscrire"
-              id="signup"
+              id="signin"
               title="S'inscrire"
             />
 
@@ -161,11 +159,12 @@
           <button title="Se connecter avec Google" class="whiteColor hoverBtn google ptb10 plr15 mtb1">
             Log in with Google
           </button>
+
           <button
             class="hoverBtn ptb10 plr15 mtb1 btnClassic "
             type="button"
             title="Accéder au site sans s'inscrire"
-            onclick="self.location.href='./index.html'" 
+            onclick="self.location.href='../users.php?q=<?= uniqid(); ?>'" 
           >Accéder à Mytotool sans s'inscrire.
           </button>
         </article>
@@ -174,8 +173,8 @@
     <footer class="flex flexC">
       <p class="tac bottom m0 ptb10">Développé par Thibault BOUCHE<sup>&copy</sup><br> <em>Tous droits réservés</em></p>
     </footer>
-    <script src="./main.js"></script>
-    <script src="./connect.js"></script>
+    <script src="../home/main.js"></script>
+    <script src="../connect/connect.js"></script>
 
   </body>
 </html>
