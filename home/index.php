@@ -10,8 +10,10 @@
     
 }
 $userID = $_GET["id"];
+$previousDay = $_GET["previousDay"];
+$nextDay = $_GET["nextDay"];
 
-$dateDisplay = "2021-11-03";
+$dateDisplay = date("Y-m-d");
 $sql = "SELECT tasks.*, users.nickname FROM tasks 
 JOIN users ON tasks.userID = users.id
 WHERE tasks.userID LIKE '$userID' 
@@ -54,12 +56,6 @@ foreach ($db_tasks as $db_task){
   $db_time = strftime('%H:%M', $db_datetime);
   // $db_day = strftime('%A', $db_datetime);
 
-  // echo $db_datetime . " " ;
-  // echo $db_date . " " ;
-
-
-
-
   empty($db_task['place']) ? $db_place = "Aucun lieu" : $db_place  = $db_task['place'];
   $db_todo = $db_task['task'];
   empty($db_task['description']) ? $db_description = "Aucune description" : $db_description  = $db_task['description'];
@@ -68,10 +64,6 @@ foreach ($db_tasks as $db_task){
   !empty($db_task['category']) ? $db_category = "Catégorie : " . $db_task['category'] : $db_category = "Aucune catégorie" ;
   $db_checked = $db_task['checked'];
   $db_deleted = $db_task['deleted'];
-
-
-  // print_r($db_task);
-  // die();
 
   $db_taskDisplay .= 
   "<div class=\"grid gtc cgap10 bsdB\">
@@ -105,13 +97,25 @@ foreach ($db_tasks as $db_task){
           </div>
         </div>"
   ;
-
-  // echo $db_taskDisplay;
-
 }
 
-// echo ("userID : " . $userID);
-// die();
+if ($nextDay != 0) {
+  $tomorrow  = mktime(0, 0, 0, date("m")  , date("d")+$nextDay, date("Y"));
+  $nextDay .= 1;
+  
+  $db_day = db_day($tomorrow);
+  $db_date = db_date($tomorrow);
+}
+//Inclure une boucle ?
+
+if ($previousDay != 0) {
+  $tomorrow  = mktime(0, 0, 0, date("m")  , date("d")-1, date("Y"));
+  $previousDay = $previousDay - 1;
+  
+  $db_day = db_day($tomorrow);
+  $db_date = db_date($tomorrow);
+}
+//Inclure une boucle ?
 ?>
 
 <!DOCTYPE html>

@@ -30,11 +30,17 @@ function reloadAccueil(){
 }
 
 function leftButton(){
-    console.log("left button ok");
+    // Comment JS récupère l'ID sur l'index ?
+    let previousDay = (- 1);
+    let id = 'eec9377a2f8a3b4695107ab39e0a0037';
+    document.location.href = '../home/index.php?previousDay=' + previousDay + '&id=' + id;
 }
 
 function rightButton(){
-    console.log("right button ok");
+    // Comment JS récupère l'ID sur l'index ?
+    let nextDay = 1;
+    let id = 'eec9377a2f8a3b4695107ab39e0a0037';
+    document.location.href = '../home/index.php?nextDay=' + nextDay + '&id=' + id;
 }
 
 function deleteTask(){
