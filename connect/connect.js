@@ -105,6 +105,11 @@ function emptyNickname() {
   }
 }
 
+function nosub(){
+  document.location.href = "../users.php";
+
+}
+
 function emptyMail() {
   let messageMail;
   let messageBonjour;

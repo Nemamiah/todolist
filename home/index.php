@@ -1,3 +1,119 @@
+<?php
+  try {
+
+    $db = new PDO('mysql:host=localhost;dbname=mytotool;port=8889', 'root', 'root');
+
+} catch (\Throwable $error) {
+
+    print_r($error);
+    die();
+    
+}
+$userID = $_GET["id"];
+
+$dateDisplay = "2021-11-03";
+$sql = "SELECT tasks.*, users.nickname FROM tasks 
+JOIN users ON tasks.userID = users.id
+WHERE tasks.userID LIKE '$userID' 
+AND tasks.date LIKE '$dateDisplay%' ";
+$query = $db->prepare($sql);
+$query->execute();
+
+$db_tasks = $query->fetchAll(PDO::FETCH_ASSOC);
+
+// foreach ($db_tasks as $db_task){
+//   print_r($db_task['userID']);
+//   print_r($db_task['project'] . "<br>");
+// }
+// die();
+// setlocale(LC_TIME, 'fr_FR.utf8','fra'); 
+// date_default_timezone_set("Europe/Paris");
+$db_nickname = $db_tasks[0]['nickname'];
+
+function db_date($db_dt){
+  $day = array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"); 
+  $month = array("janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"); 
+  $date = explode('|', date( "w|d|n", $db_dt ));
+
+  return $date[1] . ' ' . $month[$date[2]-1] . ' ' . $date[3] ;
+}
+
+function db_day($db_dt){
+  $day = array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"); 
+  $month = array("janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"); 
+  $date = explode('|', date( "w|d|n", $db_dt ));
+
+  return $day[$date[0]] ;
+}
+
+foreach ($db_tasks as $db_task){
+  $db_userID = $db_task['userID'];
+  $db_datetime = strtotime($db_task['date']);
+  $db_date = db_date($db_datetime);
+  $db_day = db_day($db_datetime);
+  $db_time = strftime('%H:%M', $db_datetime);
+  // $db_day = strftime('%A', $db_datetime);
+
+  // echo $db_datetime . " " ;
+  // echo $db_date . " " ;
+
+
+
+
+  empty($db_task['place']) ? $db_place = "Aucun lieu" : $db_place  = $db_task['place'];
+  $db_todo = $db_task['task'];
+  empty($db_task['description']) ? $db_description = "Aucune description" : $db_description  = $db_task['description'];
+
+  !empty($db_task['project']) ? $db_project = "Projet : " . $db_task['project'] : $db_project = "Aucun projet";
+  !empty($db_task['category']) ? $db_category = "Catégorie : " . $db_task['category'] : $db_category = "Aucune catégorie" ;
+  $db_checked = $db_task['checked'];
+  $db_deleted = $db_task['deleted'];
+
+
+  // print_r($db_task);
+  // die();
+
+  $db_taskDisplay .= 
+  "<div class=\"grid gtc cgap10 bsdB\">
+          <p class=\"\">" . $db_time . "</p>
+          <p class=\"gc2sTab\">" .  $db_todo . "</p>
+          <p class=\"tac tacMob gc2sTab gcr2\">" . "à " . $db_place . " <br /></p>
+          <p class=\"gc2s gr\">
+          " .  $db_description . "
+
+            <br /><br />
+            " .  $db_project . " <br />
+            " .  $db_category . " <br /><br />
+          </p>
+          <div class=\"m1em flex flexE alignS gc2sTab flexETab\">
+            <a href=\"#\"
+              ><img
+                src=\"https://image.flaticon.com/icons/png/512/1250/1250180.png\"
+                class=\"wh25p mw75p mlr1\"
+                alt=\"Supprimer la tâche\"
+                title=\"Supprimer\"
+                onclick=\"deleteTask()\"
+            /></a>
+            <a href=\"#\"
+              ><img
+                src=\"https://image.flaticon.com/icons/png/512/1250/1250185.png\"
+                class=\"wh25p mw75p mlr1\"
+                alt=\"Tâche traitée\"
+                title=\"Traité\"
+                onclick=\"doneTask()\"
+            /></a>
+          </div>
+        </div>"
+  ;
+
+  // echo $db_taskDisplay;
+
+}
+
+// echo ("userID : " . $userID);
+// die();
+?>
+
 <!DOCTYPE html>
 <html class="" lang="fr">
   <head>
@@ -18,7 +134,7 @@
       rel="stylesheet"
     />
 
-    <title>Mytotool : Votre todolist par SAFRIO</title>
+    <title>Mytotool : La todolist de <?= $db_nickname?></title>
   </head>
 
   <body class="">
@@ -110,7 +226,7 @@
       </div>
     </header>
 
-    <h1 class="tac mlr2 mtPage">Bonjour Monsieur Anderson.</h1>
+    <h1 class="tac mlr2 mtPage">Bonjour <?= $db_nickname?>.</h1>
 
     <main class="mlr2 grid gtc2">
       <aside class="menuAside bsd flex flexC ">
@@ -226,9 +342,9 @@
       <section class="bsd gc2 plr1 mlr1 scroller w75">
         <article class="flex spaceB alignC alignSTab gtr">
           <div>
-            <h2 class="">Aujourd'hui</h2>
+            <h2 class=""><?= $db_day . " " . $db_date ?></h2>
 
-            <h3 class="">Vendredi 22 octobre 2021</h3>
+            <h3 class=""><?= " " ?></h3>
           </div>
           <div class="flex flexE spaceB marginH2Tab">
             <a href="#"
@@ -253,40 +369,9 @@
         </article>
 
         <article class="flex flexCol">
-          <div class="grid gtc cgap10 bsdB">
-            <p class="">10:15</p>
-            <p class="gc2sTab">Présentation portes ouvertes</p>
-            <p class="tac tacMob gc2sTab gcr2">à CESI <br /></p>
-            <p class="gc2s gr">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga
-              impedit quae nobis ipsam veniam, soluta deserunt itaque beatae
-              pariatur voluptatibus distinctio reiciendis mollitia
+          <?= $db_taskDisplay ?>
 
-              <br /><br />
-              Projet : CESI <br />
-              Catégorie : Professionnel <br /><br />
-            </p>
-            <div class="m1em flex flexE alignS gc2sTab flexETab">
-              <a href="#"
-                ><img
-                  src="https://image.flaticon.com/icons/png/512/1250/1250180.png"
-                  class="wh25p mw75p mlr1"
-                  alt="Supprimer la tâche"
-                  title="Supprimer"
-                  onclick="deleteTask()"
-              /></a>
-              <a href="#"
-                ><img
-                  src="https://image.flaticon.com/icons/png/512/1250/1250185.png"
-                  class="wh25p mw75p mlr1"
-                  alt="Tâche traitée"
-                  title="Traité"
-                  onclick="doneTask()"
-              /></a>
-            </div>
-          </div>
-
-          <div class="grid gtc cgap10 bsdB">
+          <!-- <div class="grid gtc cgap10 bsdB">
             <p class="">15:00</p>
             <p class="gc2sTab">Réserver After work</p>
             <p class="tac tacMob gc2sTab gcr2">
@@ -351,7 +436,7 @@
                   onclick="doneTask()"
               /></a>
             </div>
-          </div>
+          </div> -->
 
           <div>
             <p class="tac">Vous n'avez pas d'autre tâche pour aujourd'hui.</p>

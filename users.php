@@ -21,27 +21,55 @@ $sql = "INSERT INTO users (id, name, nickname, mail, password) VALUES (?, ?, ?, 
 $query = $db->prepare($sql);
 
 $userID = (uniqid() . $_POST["email"] . $_POST["name"] . $_POST["nickname"]);
-$userPassword = md5($_POST["password"] . "Bon chance pour trouver le mot de passe ! :) Bisou de Thibault en 2021." . $userID);
-$userMail = $_GET["mail"];
+// $userPassword = "6d71adbce43d030d2f58460e0a8d1d20";
+$userPassword = $_POST["password"] . "Bon chance pour trouver le mot de passe ! :) Bisou de Thibault en 2021." . $userID;
+// $userMail = $_POST["email"];
 // var_dump($db_users);
+$userMail = "thibault.bouche@gmail.com";
+$nosub = uniqid();
 
-$mailTest = ($_GET["q"]);
+foreach($db_users as list($db_userID, $b, $c, $db_userMail, $db_userPassword)){
+    echo "<br> <br> mail " . $userMail . " <br>";
+    echo "dbmail " . $db_userMail . " <br>";
+    // echo "saisie pwd" . $userPassword . " <br>";
+    // echo "dbpwd " . $db_userPassword . " <br><br>";
+    // echo "<br><br>Mail et mdp dans bdd<br>" . $db_userMail . "<br>";
+    // echo $db_userPassword . "<br>";
+    if (($db_userMail == $userMail) && ($db_userPassword == $userPassword)){
+        echo ("connection ok mail dans la bdd et mdp ok " . $db_userID);
+        header("Location:./home/index.php?id=$db_userID");
 
-foreach($db_users as list($a, $b, $c, $db_userMail, $db_userPassword)){
-    if ($db_userMail == $userMail){
-        $db_mailExists = true;
+    } else if ($db_userMail == $userMail){
+        var_dump($db_userMail);
+        var_dump($userMail);
+        echo("BRAVOOOOOOOOO");
+
+    } else if (($db_userMail != $userMail) || ($db_userPassword != $userPassword)){
+        $query->bindValue(1, md5(htmlspecialchars($nosub)));
+        $query->bindValue(2, htmlspecialchars("n° " . $nosub));
+        $query->bindValue(3, htmlspecialchars("n° " . $nosub));
+        $query->bindValue(4, htmlspecialchars($nosub));
+        $query->bindValue(5, md5(htmlspecialchars($userPassword)));
+        header("Location:./connect/log/index.php?key=$userPassword&mail=$nosub");
+        echo ("<br>inscription no sub ok");
+        var_dump($db_userMail);
+        var_dump($userMail) . "    ";
+        var_dump($db_userPassword);
+        // header("Location:../../connect/signin/index.php?k=mailouIDpasdansBDD");
+    } else {
+        echo ("t'es pommé");
     };
 };
 
 // user no sub
-if ($_GET["q"] != "") {
-    $query->bindValue(1, md5(htmlspecialchars($_GET["q"])));
-    $query->bindValue(2, htmlspecialchars("n° " . $_GET["q"]));
-    $query->bindValue(3, htmlspecialchars("n° " . $_GET["q"]));
-    $query->bindValue(4, htmlspecialchars($_GET["q"]));
-    $query->bindValue(5, md5(htmlspecialchars($userPassword)));
-    header("Location:./connect/log/index.php?key=$userPassword&mail=$mailTest");
-
+// if (!empty($_GET["q"])) {
+//     $query->bindValue(1, md5(htmlspecialchars($_GET["q"])));
+//     $query->bindValue(2, htmlspecialchars("n° " . $_GET["q"]));
+//     $query->bindValue(3, htmlspecialchars("n° " . $_GET["q"]));
+//     $query->bindValue(4, htmlspecialchars($_GET["q"]));
+//     $query->bindValue(5, md5(htmlspecialchars($userPassword)));
+//     header("Location:./connect/log/index.php?key=$userPassword&mail=$nosub");
+// }
     // si mail exists : log ++ penser verif password
 // } else if (
 //     !empty($_GET["mail"]) &&
@@ -73,7 +101,7 @@ if ($_GET["q"] != "") {
 //     var_dump($db_userMail);
 //     // var_dump($db_users);
 
-}
+
 
 
 
@@ -86,6 +114,6 @@ if ($query->execute()) {
 
 // $sql = "UPDATE `users` SET `name` = ? WHERE `users`.`id` = 1;"
 
-    // header("Location:./index.html")
+    // header("Location:./index.php")
     // Penser à mettre un retour à la page de connexion si l'utilisateur n'est pas inscrit
 ?>

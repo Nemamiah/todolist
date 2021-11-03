@@ -26,25 +26,18 @@ $userPassword = md5($_GET["key"]);
 $userMail = $_GET["mail"];
 
 
-echo "log à usage unique :<br>" . $userMail . "<br>";
-echo $userPassword . "<br>";
-
-foreach($db_users as list($a, $b, $c, $db_userMail, $db_userPassword)){
-    echo "<br><br>Mail et mdp dans bdd<br>" . $db_userMail . "<br>";
-    echo $db_userPassword . "<br>";
-    // if ($db_userMail == $userMail){
-    //     $db_mailExists;
-    // };
+foreach($db_users as list($db_userID, $b, $c, $db_userMail, $db_userPassword)){
+    // echo "<br><br>Mail et mdp dans bdd<br>" . $db_userMail . "<br>";
+    // echo $db_userPassword . "<br>";
+    if (($db_userMail == $userMail) && ($db_userPassword == $userPassword)){
+        echo ("mail dans la bdd et mdp ok " . $db_userID);
+        header("Location:../../home/index.php?id=$db_userID");
+    } else if (($db_userMail != $userMail) || ($db_userPassword != $userPassword)){
+        echo ("erreur mdp et mail pas dans bdd");
+        // header("Location:../../connect/signin/index.php?k=mailouIDpasdansBDD");
+    };
 };
 
-// SI mail dans la base de données
-//         vérifier mdp == mdp bdd
-//             OK renvoyer vers la todolist de son ID        
-//             SINON mdp oublié ?
-//                 OK saisir nouveau mdp 
-//                 SINON retour connect index
-//     SINON mail pas dans la bdd
-//         HEADER LOCATION SIGNIN
         
         
         

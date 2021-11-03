@@ -36,7 +36,7 @@
     <title>Mytotool : Bienvenue sur Mytotool, la todolist par SAFRIO</title>
   </head>
   <body>
-    <header class="flex spaceB alignC mlr2 fixed headerFixed bgWhite top left dnone">
+    <header class="flex spaceB alignC mlr2 fixed headerFixed bgWhite top left">
       <a href="../connect/index.php"
         ><img
           src="https://www.clipartmax.com/png/full/106-1064080_blue-check-mark-symbol.png"
@@ -57,7 +57,7 @@
             <p class="m0 tac dnone" id="messageRegisterOn">Enchanté,
               <br>N'hésitez pas à créer un compte pour sauvegarder vos tâches.</p> 
 
-          <form class="flex flexCol" action="./users.php"
+          <form class="flex flexCol" action="../users.php"
           method="post"
           >
             
@@ -121,7 +121,7 @@
             <span class="" id="messagePwd"></span> 
 
 
-            <!-- onclick="self.location.href='../users.php?mail=test@mail.fr'"  -->
+             
             <input
               class="ptb10 mtb2"
               type="submit"
@@ -160,11 +160,13 @@
             Log in with Google
           </button>
 
+          <!-- onclick="self.location.href='../users.php?q=<?= uniqid(); ?>'"  -->
+
           <button
             class="hoverBtn ptb10 plr15 mtb1 btnClassic "
             type="button"
+            onclick="nosub()"
             title="Accéder au site sans s'inscrire"
-            onclick="self.location.href='../users.php?q=<?= uniqid(); ?>'" 
           >Accéder à Mytotool sans s'inscrire.
           </button>
         </article>
