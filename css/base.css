@@ -53,10 +53,17 @@
     column-gap: 10px;
 }
 
+.cgap20{
+    column-gap: 20px;
+}
 /* grid */
 
 .grid{
     display: grid;
+}
+
+.gtcR{
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .gtc{
@@ -86,6 +93,11 @@
 
 .mb1{
     margin-bottom: 1vw;
+}
+
+.mtb5{
+    margin-top:5px;
+    margin-bottom:5px;
 }
 
 .mtb15{
@@ -169,6 +181,11 @@
     padding: 10px
 }
 
+.ptb5{
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
 .ptb10{
     padding-top:10px;
     padding-bottom:10px;
@@ -182,6 +199,11 @@
 .plr1{
     padding-left:1vw;
     padding-right:1vw;
+}
+
+.plr5{
+    padding-left:5vw;
+    padding-right:5vw;
 }
 
 .plr60{
@@ -201,6 +223,18 @@
 }
 
 /* Width & Height */
+
+.w100{
+    width: 100%;
+}
+
+.h100{
+    height: 100%;
+}
+
+.mh150{
+    min-height:150px;
+}
 
 .wh100{
     width: 100%;

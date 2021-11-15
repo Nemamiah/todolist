@@ -9,15 +9,20 @@
     die();
     
 }
-$userID = $_GET["id"];
-$previousDay = $_GET["previousDay"];
-$nextDay = $_GET["nextDay"];
 
-$dateDisplay = date("Y-m-d");
+$userID = $_GET["id"];
+$displayPeriod = $_GET["display"];
+$currentDatetime = time();
+$db_date = db_date($currentDatetime);
+$db_day = db_day($currentDatetime);
+$db_time = strftime('%H:%M', $currentDatetime);
+$editTask = $_GET["task"];
+
 $sql = "SELECT tasks.*, users.nickname FROM tasks 
 JOIN users ON tasks.userID = users.id
 WHERE tasks.userID LIKE '$userID' 
-AND tasks.date LIKE '$dateDisplay%' ";
+AND tasks.date";
+
 $query = $db->prepare($sql);
 $query->execute();
 
@@ -30,7 +35,15 @@ $db_tasks = $query->fetchAll(PDO::FETCH_ASSOC);
 // die();
 // setlocale(LC_TIME, 'fr_FR.utf8','fra'); 
 // date_default_timezone_set("Europe/Paris");
-$db_nickname = $db_tasks[0]['nickname'];
+
+$sql = "SELECT * FROM users WHERE id LIKE '$userID'";
+
+$query = $db->prepare($sql);
+$query->execute();
+
+$db_user = $query->fetch(PDO::FETCH_ASSOC);
+
+$db_nickname = $db_user['nickname'];
 
 function db_date($db_dt){
   $day = array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"); 
@@ -48,15 +61,25 @@ function db_day($db_dt){
   return $day[$date[0]] ;
 }
 
+if ($displayPeriod == 'next') {
+  $date = new DateTime();
+  $date->add(new DateInterval('P1D'));
+  $currentDatetime = $date->getTimestamp();
+    
+} else if ($displayPeriod == 'previous') {
+  $date = new DateTime();
+  $date->sub(new DateInterval('P1D'));
+  $currentDatetime = $date->getTimestamp();
+}
+//Inclure une boucle ?
+
 foreach ($db_tasks as $db_task){
-  $db_userID = $db_task['userID'];
   $db_datetime = strtotime($db_task['date']);
   $db_date = db_date($db_datetime);
   $db_day = db_day($db_datetime);
   $db_time = strftime('%H:%M', $db_datetime);
-  // $db_day = strftime('%A', $db_datetime);
 
-  empty($db_task['place']) ? $db_place = "Aucun lieu" : $db_place  = $db_task['place'];
+  empty($db_task['place']) ? $db_place = "Aucun lieu" : $db_place  = "à ". $db_task['place'];
   $db_todo = $db_task['task'];
   empty($db_task['description']) ? $db_description = "Aucune description" : $db_description  = $db_task['description'];
 
@@ -64,58 +87,48 @@ foreach ($db_tasks as $db_task){
   !empty($db_task['category']) ? $db_category = "Catégorie : " . $db_task['category'] : $db_category = "Aucune catégorie" ;
   $db_checked = $db_task['checked'];
   $db_deleted = $db_task['deleted'];
-
-  $db_taskDisplay .= 
-  "<div class=\"grid gtc cgap10 bsdB\">
-          <p class=\"\">" . $db_time . "</p>
-          <p class=\"gc2sTab\">" .  $db_todo . "</p>
-          <p class=\"tac tacMob gc2sTab gcr2\">" . "à " . $db_place . " <br /></p>
-          <p class=\"gc2s gr\">
-          " .  $db_description . "
-
-            <br /><br />
-            " .  $db_project . " <br />
-            " .  $db_category . " <br /><br />
-          </p>
-          <div class=\"m1em flex flexE alignS gc2sTab flexETab\">
-            <a href=\"#\"
-              ><img
-                src=\"https://image.flaticon.com/icons/png/512/1250/1250180.png\"
-                class=\"wh25p mw75p mlr1\"
-                alt=\"Supprimer la tâche\"
-                title=\"Supprimer\"
-                onclick=\"deleteTask()\"
-            /></a>
-            <a href=\"#\"
-              ><img
-                src=\"https://image.flaticon.com/icons/png/512/1250/1250185.png\"
-                class=\"wh25p mw75p mlr1\"
-                alt=\"Tâche traitée\"
-                title=\"Traité\"
-                onclick=\"doneTask()\"
-            /></a>
-          </div>
-        </div>"
-  ;
-}
-
-if ($nextDay != 0) {
-  $tomorrow  = mktime(0, 0, 0, date("m")  , date("d")+$nextDay, date("Y"));
-  $nextDay .= 1;
   
-  $db_day = db_day($tomorrow);
-  $db_date = db_date($tomorrow);
-}
-//Inclure une boucle ?
+  if (db_date($currentDatetime) == $db_date) {
 
-if ($previousDay != 0) {
-  $tomorrow  = mktime(0, 0, 0, date("m")  , date("d")-1, date("Y"));
-  $previousDay = $previousDay - 1;
-  
-  $db_day = db_day($tomorrow);
-  $db_date = db_date($tomorrow);
+    $db_taskDisplay .= 
+    "<div class=\"grid gtc cgap10 bsdB\">
+            <p class=\"\">" . $db_time . "</p>
+            <p class=\"gc2sTab\">" .  $db_todo . "</p>
+            <p class=\"tac tacMob gc2sTab gcr2\">" . $db_place . " <br /></p>
+            <p class=\"gc2s gr\">
+            " .  $db_description . "
+
+              <br /><br />
+              " .  $db_project . " <br />
+              " .  $db_category . " <br /><br />
+            </p>
+            <div class=\"m1em flex flexE alignS gc2sTab flexETab\">
+              <a href=\"#\"
+                ><img
+                  src=\"https://image.flaticon.com/icons/png/512/1250/1250180.png\"
+                  class=\"wh25p mw75p mlr1\"
+                  alt=\"Supprimer la tâche\"
+                  title=\"Supprimer\"
+                  onclick=\"deleteTask()\"
+              /></a>
+              <a href=\"#\"
+                ><img
+                  src=\"https://image.flaticon.com/icons/png/512/1250/1250185.png\"
+                  class=\"wh25p mw75p mlr1\"
+                  alt=\"Tâche traitée\"
+                  title=\"Traité\"
+                  onclick=\"doneTask()\"
+              /></a>
+            </div>
+          </div>"
+    ;
+  }
 }
-//Inclure une boucle ?
+
+
+
+
+$js_userID = '<span class="dnone" id="userID">' . $userID . '</span>';
 ?>
 
 <!DOCTYPE html>
@@ -135,8 +148,8 @@ if ($previousDay != 0) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
+      
 
     <title>Mytotool : La todolist de <?= $db_nickname?></title>
   </head>
@@ -346,7 +359,7 @@ if ($previousDay != 0) {
       <section class="bsd gc2 plr1 mlr1 scroller w75">
         <article class="flex spaceB alignC alignSTab gtr">
           <div>
-            <h2 class=""><?= $db_day . " " . $db_date ?></h2>
+            <h2 class=""><?= db_day($currentDatetime) . " " . db_date($currentDatetime) ?></h2>
 
             <h3 class=""><?= " " ?></h3>
           </div>
@@ -375,73 +388,6 @@ if ($previousDay != 0) {
         <article class="flex flexCol">
           <?= $db_taskDisplay ?>
 
-          <!-- <div class="grid gtc cgap10 bsdB">
-            <p class="">15:00</p>
-            <p class="gc2sTab">Réserver After work</p>
-            <p class="tac tacMob gc2sTab gcr2">
-              à Cormountreuil <br />
-              LA BOUQUINE
-            </p>
-            <p class="gc2s gr">
-              Aucune note.
-
-              <br /><br />
-              Projet : CESI <br />
-              Catégorie : Divertissements <br /><br />
-            </p>
-
-            <div class="m1em flex flexE alignS gc2sTab flexETab">
-              <a href="#"
-                ><img
-                  src="https://image.flaticon.com/icons/png/512/1250/1250180.png"
-                  class="wh25p mw75p mlr1"
-                  alt="Supprimer la tâche"
-                  title="Supprimer"
-                  onclick="deleteTask()"
-              /></a>
-              <a href="#"
-                ><img
-                  src="https://image.flaticon.com/icons/png/512/1250/1250185.png"
-                  class="wh25p mw75p mlr1"
-                  alt="Tâche traitée"
-                  title="Traité"
-                  onclick="doneTask()"
-              /></a>
-            </div>
-          </div>
-
-          <div class="grid gtc cgap10 bsdB">
-            <p class="">18:15</p>
-            <p class="gc2sTab">Préparer la soirée gaming</p>
-            <p class="tac tacMob gc2sTab gcr2">à Neuflize CITY</p>
-            <p class="gc2s gr">
-              Faire les courses
-
-              <br /><br />
-              Projet : Projet X <br />
-              Catégorie : Urgent <br /><br />
-            </p>
-
-            <div class="m1em flex flexE alignS gc2sTab flexETab">
-              <a href="#"
-                ><img
-                  src="https://image.flaticon.com/icons/png/512/1250/1250180.png"
-                  class="wh25p mw75p mlr1"
-                  alt="Supprimer la tâche"
-                  title="Supprimer"
-                  onclick="deleteTask()"
-              /></a>
-              <a href="#"
-                ><img
-                  src="https://image.flaticon.com/icons/png/512/1250/1250185.png"
-                  class="wh25p mw75p mlr1"
-                  alt="Tâche traitée"
-                  title="Traité"
-                  onclick="doneTask()"
-              /></a>
-            </div>
-          </div> -->
-
           <div>
             <p class="tac">Vous n'avez pas d'autre tâche pour aujourd'hui.</p>
           </div>
@@ -449,7 +395,8 @@ if ($previousDay != 0) {
       </section>
     </main>
     <footer class="flex flexC">
-      <p class="tac bottom m0 ptb10">Développé par Thibault BOUCHE<sup>&copy</sup><br> <em>Tous droits réservés</em></p>
+      <p class="tac bottom m0 ptb10"><?= $js_userID ?><br>
+      Développé par Thibault BOUCHE<sup>&copy</sup><br> <em>Tous droits réservés</em></p>
     </footer>
     <script src="../home/main.js"></script>
     <script src="../home/home.js"></script>
